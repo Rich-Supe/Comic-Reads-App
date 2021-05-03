@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const db = require('../db/models');
@@ -18,6 +18,10 @@ const { loginUser, logoutUser, requireAuth } = require('../auth');
 router.get('/user/register', csrfProtection, (req, res) => {
   // res.render('HELLO')
   const user = db.User.build();
+  if (res.locals.authenticated) {
+    res.redirect('/')
+  }
+
   res.render('user-register', {
     title: 'Register',
     user,
@@ -109,6 +113,9 @@ router.post('/user/register', csrfProtection, userValidators,
 //LOGIN ROUTES
 
   router.get('/user/login', csrfProtection, (req, res) => {
+    if (res.locals.authenticated) {
+      res.redirect('/')
+    }
     res.render('user-login', {
       title: 'Login',
       csrfToken: req.csrfToken(),
@@ -170,6 +177,8 @@ router.post('/user/register', csrfProtection, userValidators,
     logoutUser(req, res);
     res.redirect('/user/login');
   });
+
+
 
 
 
