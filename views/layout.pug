@@ -1,8 +1,17 @@
 doctype html
 html
   head
-      block head
-        title="Express Starter App"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+    block head
+      title="Comic Reads"
+      link(rel='stylesheet' href='/stylesheets/reset.css')
   body
+    nav 
+      if locals.authenticated
+        span(class='navbar-text px-4') Welcome #{user.firstName}!
+        form(class='form-inline pr-4' action='/user/logout' method='post')
+          button(class='btn btn-sm btn-warning' type='submit') Logout
+      else
+        span(class='navbar-text px-4')
+          a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
+          a(class='btn btn-sm btn-dark' href='/user/register') Register
     block content
