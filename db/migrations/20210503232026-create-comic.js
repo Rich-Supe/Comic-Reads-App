@@ -17,6 +17,10 @@ module.exports = {
       },
       genre: {
         type: Sequelize.STRING
+      },
+      coverUrl: {
+        type: Sequelize.STRING,
+        unique: true
       }
     });
   },
