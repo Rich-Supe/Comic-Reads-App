@@ -20,8 +20,7 @@ mixin comicCard( imageUrl, title, author, genre, readStatus, id )
     label= author 
     label= genre
     div
-      label= Read
-      input=(type='checkbox')
+      button(type='submit' id=`hasRead${id}`) Add to read
     div(class='button' name='addToShelf')
       button(type='submit' name= `button${id}`)
     
