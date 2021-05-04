@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.belongsToMany( models.Comic, columnMapping);
     User.belongsToMany( models.Shelf, columnMapping2);
-    User.hasMany(models.Shelf, { foreignKey: "userId" }); 
+    User.hasMany(models.Review, { foreignKey: "userId" }); 
   };
   return User;
 };
