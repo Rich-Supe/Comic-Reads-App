@@ -12,15 +12,17 @@ module.exports = {
         type: Sequelize.STRING
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(1,1)
       },
       comicId: {
         type: Sequelize.INTEGER,
-        unique: true
+        unique: true,
+        references: { model: "Comics" }
       },
       userId: {
         type: Sequelize.INTEGER,
-        unique: true
+        unique: true,
+        references: { model: "Users" }
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +31,7 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+
       }
     });
   },

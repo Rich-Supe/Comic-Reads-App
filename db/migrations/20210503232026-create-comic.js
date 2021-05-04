@@ -21,7 +21,7 @@ module.exports = {
       coverUrl: {
         type: Sequelize.STRING,
         unique: true
-      }
+      },
     });
   },
   down: (queryInterface, Sequelize) => {

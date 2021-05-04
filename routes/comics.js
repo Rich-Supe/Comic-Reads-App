@@ -17,6 +17,8 @@ router.get('/', asyncHandler(async(req, res) => {
     res.render("comics", { comics })
 }));
 
+
+
 router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
 
     res.render('(:')
