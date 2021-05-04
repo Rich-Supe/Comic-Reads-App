@@ -12,14 +12,18 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text')
     label(for=fieldName)= labelText
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
-mixin comicDisplay(title, image, author, readStatus)
-  div(class='comic-group')
-    img(src=#(image))
+mixin comicCard( imageUrl, title, author, genre, readStatus, id )
+  div(class='comic__cards' id= id)
+    picture
+      img(src=imageUrl)
     label= title
     label= author 
+    label= genre
     div
       label= Read
-      input= readStatus
+      input=(type='checkbox')
+    div(class='button' name='addToShelf')
+      button(type='submit' name= `button${id}`)
     
 
 
