@@ -16,11 +16,13 @@ module.exports = {
       },
       comicId: {
         type: Sequelize.INTEGER,
-        unique: true
+        unique: true,
+        references: { model: "Comics" }
       },
       userId: {
         type: Sequelize.INTEGER,
-        unique: true
+        unique: true,
+        references: { model: "Users" }
       },
       createdAt: {
         allowNull: false,
