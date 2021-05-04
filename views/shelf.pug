@@ -4,4 +4,4 @@ block content
     mixin shelf(shelfId)
     section(class="shelf")
         each comic in comics 
-            +comicCard( comic.comicUrl, comic.title, comic.author, comic.genre, JoinComicToUser.hasRead, comic.id)
+            +comicCard( comic.comicUrl, comic.title, comic.author, comic.genre, Collections.hasRead, comic.id)
