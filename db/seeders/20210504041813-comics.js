@@ -96,7 +96,7 @@ module.exports = {
       {title: 'Hellraiser Issue 1', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/901921.jpg'},
       {title: 'Hellraiser Issue 2', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/640287.jpg'},
       {title: 'Hellraiser Issue 3', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/642381.jpg'},
-      {title: 'Hellraiser Issue 4', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/642381.jpg'},
+      {title: 'Hellraiser Issue 4', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/729703.jpg'},
       {title: 'Hellraiser Issue 5', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/640297.jpg'},
       {title: 'Hellraiser Issue 6', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/640661.jpg'},
       {title: 'Hellraiser Issue 7', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/675513.jpg'},
@@ -118,7 +118,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('People', null, {});
+    return queryInterface.bulkDelete('Comics', null, {});
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
