@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       rating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER(1,1)
       },
       comicId: {
         type: Sequelize.INTEGER,
@@ -21,14 +21,6 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         unique: true
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },

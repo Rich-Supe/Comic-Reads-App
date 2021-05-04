@@ -104,7 +104,7 @@ module.exports = {
       {title: 'Hellraiser Issue 9', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/628113.jpg'},
       {title: 'Hellraiser Issue 10', author: 'Clive Barker', genre: 'Horror', coverUrl: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/629657.jpg'}
     ], {});
-    
+
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
