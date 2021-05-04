@@ -1,18 +1,18 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Reviews', {
+    return queryInterface.createTable('Collections', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      review: {
-        type: Sequelize.STRING
+      hasRead: {
+        type: Sequelize.BOOLEAN
       },
-      rating: {
-        type: Sequelize.INTEGER(1,1)
+      wantsToRead: {
+        type: Sequelize.BOOLEAN
       },
       comicId: {
         type: Sequelize.INTEGER,
@@ -33,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Reviews');
+    return queryInterface.dropTable('Collections');
   }
 };
