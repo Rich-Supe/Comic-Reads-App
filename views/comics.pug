@@ -1,5 +1,10 @@
-extends layout
+includes utils.pug
 
-block content 
-    each comic in comics 
-        
+block content
+     each el in comics
+        tr
+          td(scope='row') #{el.id}
+          td #{el.title}
+          td #{el.author}
+          td #{el.genre}
+          td #{el.coverUrl}

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     author: DataTypes.STRING,
     genre: DataTypes.STRING,
     coverUrl: DataTypes.STRING
-  }, {});
+  }, {timestamps: false});
   Comic.associate = function(models) {
     // associations can be defined here
     const columnMapping = {
