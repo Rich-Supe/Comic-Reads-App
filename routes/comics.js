@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
-const { Comics } = db;
+const { Comic } = db;
 const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
@@ -12,10 +12,12 @@ router.use(requireAuth)
 
 
 router.get('/', asyncHandler(async(req, res) => {
-    const comics = await Comics.findAll();
-
+    // console.log("From the JavaScript File I'm reaching here")
+    const comics = await Comic.findAll();
     res.render("comics", { comics })
 }));
+
+
 
 router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
 

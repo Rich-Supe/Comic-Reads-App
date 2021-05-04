@@ -1,31 +1,43 @@
 const { User, Comics } = db;
-//Stephen - Waiting on how button classes will be laid out
+// Stephen - Waiting on how button classes will be laid out
 
-//This function loads the user's current read and want to read status////////////////////////////////
-//on the comics page I will need to check if that user's read status and change color and innerText
-// window.addEventListener("DOMContentLoaded", async (event)=>{
-//  console.log("Hello")
+// This function loads the user's current read and want to read status////////////////////////////////
+// on the comics page I will need to check if that user's read status and change color and innerText
+window.addEventListener("DOMContentLoaded", async (event)=>{
+    // Session {
+    //     cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
+    //     auth: { userId: 11 }
+    //   }
+    const {userId: { id }} = await res.json();
+    const body = { id };
+    try {
+        //need to fleshout the profile page so I can block out the "has read"
+        const res = await fetch("http://localhost:8080/comics", {
+          method: "GET",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json",
+        }
+    });
 
-//     try {
-//         //need to fleshout the profile page so I can block out the "has read"
-//         const res = await fetch("http://localhost:8080/comics", {
-//           method: "GET",
-//           body: JSON.stringify(body),
-//           headers: {
-//             "Content-Type": "application/json",
-//         }
+} catch (e) {
+    console.error(e)
+}
 
-// //     });
-// //     const comics = await Comics.findAll();
-// //     const data = await res.json();
-// //     console.log(data)
-// //     if (data){ // need to change conditional
-// // // if the res of the body "hasread" then for each of the books on the page with the corresponding id
-// // //greyout the buttons
-// //         const button= document.querySelector(".btn");
-// //         button.innerText = "Read"
-// //         button.style.backgroundColor = "grey";
-// //     }
+
+
+});
+//     });
+//     const comics = await Comics.findAll();
+//     const data = await res.json();
+//     console.log(data)
+//     if (data){ // need to change conditional
+// // if the res of the body "hasread" then for each of the books on the page with the corresponding id
+// //greyout the buttons
+//         const button= document.querySelector(".btn");
+//         button.innerText = "Read"
+//         button.style.backgroundColor = "grey";
+//     }
 //     } catch (err) {
 //             console.log(err)
 //     }
@@ -54,4 +66,3 @@ const { User, Comics } = db;
 //         console.log(err)
 //       }
 //     });
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
