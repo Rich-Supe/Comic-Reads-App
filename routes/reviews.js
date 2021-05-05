@@ -10,9 +10,12 @@ const router = express.Router();
 router.use(requireAuth);
 
 
+// router.get('/comics/:id(\\d+)', asyncHandler(async(req, res) => {
+//     res.render()
+// }))
 
 
-router.post('/comics/:comicId(\\d+)', asyncHandler( async(req, res) => {
+router.post('/comics/:id(\\d+)', requireAuth, asyncHandler( async(req, res) => {
     const { token } = req
     const { id } = jwt.decode(token).data
 
