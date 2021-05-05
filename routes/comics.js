@@ -18,8 +18,8 @@ router.get('/', asyncHandler(async(req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
-    const comics = await Comic.findByPk(comicId);
-    res.render('comic', { comics })
+    const comic = await Comic.findByPk(comicId);
+    res.render('comic', { comic })
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
