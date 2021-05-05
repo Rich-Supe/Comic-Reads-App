@@ -10,7 +10,8 @@ block content
   button(type='button' class='demo_btn') Demo User
   div(id='comicsGrid')
     each comic in comics
-      div(class='comicsCells') 
-        p= comic.title
-        a(href=`/comics/${comic.id}`)
-          img(src=comic.coverUrl)
+      div(class='comicsCells')
+        div(class="comic_img")
+          a(href=`/comics/${comic.id}`)
+            img(src=comic.coverUrl)
+        button(type='button' class='shelf_btn') Add To Shelf
