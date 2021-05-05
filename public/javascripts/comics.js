@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", async (event)=>{
     //   }
     const {userId: { id }} = await res.json();
     const body = { id };
+    console.log(`${body} is this working`)
     try {
         //need to fleshout the profile page so I can block out the "has read"
         const res = await fetch("http://localhost:8080/comics", {
