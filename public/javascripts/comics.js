@@ -3,6 +3,8 @@
 
     btn.addEventListener("click", async (event)=>{
       const targetInfo =event.target.className //classList
+      var token = document.getElementsByName("csrfToken").value;
+      console.log(token)
       const body = { targetInfo };
       try {
         const res = await fetch("http://localhost:8080/comics", {

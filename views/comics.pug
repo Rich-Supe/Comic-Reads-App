@@ -3,9 +3,7 @@ extends layout
 
 block content
   script(src="/javascripts/comics.js" type="module" defer)
-  button(type='button' class='btn1234') Test Button
-  script(src="/javascripts/demoButton.js" type="module" defer)
-  button(type='button' class='demo_btn') Demo User
+  button(type='button' class='btn1234') Want To Read
   each el in comics
     tr
       td(scope='row') #{el.id}

@@ -11,7 +11,6 @@ router.use(requireAuth)
 
 router.get('/', asyncHandler( async(req, res) => {
     const comics = await Comic.findAll();
-    console.log("HELLO")
     res.render('comics', { comics })
 }));
 
@@ -29,7 +28,6 @@ router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
     const wantToRead = await user.findByPk(comicId, {
         includes: 'JoinComicToUser'
     });
-    console.log(wantToRead)
     if(wantToRead === false){
         await wantToRead.update(true);
     } else {
