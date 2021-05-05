@@ -1,2 +1,10 @@
 extends layout 
 
+block content 
+    div
+        img(src= comic.coverUrl)
+        p= comic.title 
+        p= `Written by: ${comic.author}` 
+        p= `Genre: ${comic.genre}`
+        each review in reviews 
+            p= review.review
