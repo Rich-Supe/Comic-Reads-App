@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
-const { Comic, User } = db;
+const { Comic, User , Collection} = db;
 const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
@@ -46,23 +46,13 @@ router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 // Stephen - I want to find user and then patch "has read"
-router.patch('/', asyncHandler(async(req, res) => {
-    const { targetInfo }  = req.body
-    const Read = await Collection.findByPk(comicId)
+router.post('/', asyncHandler(async(req, res) => {
+    let currUser = req.session.auth.userId
+    const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
+    bookId = parseInt(bookId)
+    await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:bookId, userId:currUser });
+    res.json({"post":"success"});
 
-    if(wantToRead === false){
-        await wantToRead.update(true);
-    }
-    else if(wantToRead === true) {
-        await wantToRead.update(false);
-    }
-    else if(hasRead === false){
-        await hasRead.update(true);
-    }
-    else if(hasRead === true){
-        await wantToRead.update(false);
-    }
-    res.json({ targetInfo });
 }));
 
 module.exports = router

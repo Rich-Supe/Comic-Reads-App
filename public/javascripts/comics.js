@@ -2,26 +2,34 @@
 let btn = document.querySelectorAll(".btn_read");
 for(let i=0; i<btn.length; i++){
   btn[i].addEventListener("click", async (event)=>{
-    const targetInfo =event.target.className //classList
-    const targetValue =event.target.value //maybe use target value instead
-    const body = { targetInfo };
+    const targetInfo =event.target.className; //classList
+    const bookId =event.target.id; // book id
+    let hasRead;
+    let wantToRead;
+    //////////////////////////////////////////////////////////
+    if (btn[i].innerText==="Want To Read"){
+      // console.log("Front End: I will Change HTML and change CSS")
+      btn[i].innerText= "Has Read"
+      wantToRead = true
+      hasRead = false
+    }
+      else if (btn[i].innerText==="Has Read"){
+      // console.log("Change to Another Button HTML and change CSS")
+      btn[i].innerText = "Want To Read"
+      hasRead = true
+      wantToRead = false
+      }
+/////////////////////////////////////////////////////////////////
+    const body = { targetInfo, bookId, hasRead, wantToRead  };
     try {
       const res = await fetch("http://localhost:8080/comics", {
-        method: 'PATCH',
+        method: 'POST',
         body: JSON.stringify(body),
         headers: {
           "Content-Type": "application/json",
         }
       });
-
-    if (btn[i].innerText==="Want To Read"){
-      // console.log("Front End: I will Change HTML and change CSS")
-      btn[i].innerText= "Has Read"
-    }
-      else if (btn[i].innerText==="Has Read"){
-      // console.log("Change to Another Button HTML and change CSS")
-      btn[i].innerText = "Want To Read"
-      }
+      return res.json()
   }catch (e) {
       console.error(e)
   }

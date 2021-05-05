@@ -8,5 +8,5 @@ block content
     each comic in comics
       div(class='comicsCells')
         img(src=comic.coverUrl)
-        button(type='button' class='btn_read') Want To Read
+        button(type='button' class='btn_read' id=comic.id) Want To Read
         p= comic.title
