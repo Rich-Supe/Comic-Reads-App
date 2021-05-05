@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
-const { Comic, User } = db;
+const { Comic, User, Review } = db;
 const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
@@ -17,9 +17,11 @@ router.get('/', asyncHandler(async(req, res) => {
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const comicId = parseInt(req.params.id, 10);
-    const comic = await Comic.findByPk(comicId);
-    res.render('comic', { comic })
+    const id = parseInt(req.params.id, 10);
+    const comic = await Comic.findByPk(id);
+    const reviews = await Review.findAll( {where: {comicId: id}})
+    console.log(reviews)
+    res.render('comic', { comic, reviews })
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
