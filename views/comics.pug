@@ -8,10 +8,12 @@ block content
   button(type='button' class='btn1234') Test Button
   script(src="/javascripts/demoButton.js" type="module" defer)
   button(type='button' class='demo_btn') Demo User
+
   div(id='comicsGrid')
     each comic in comics
       div(class='comicsCells')
         div(class="comic_img")
           a(href=`/comics/${comic.id}`)
             img(src=comic.coverUrl)
-        button(type='button' class='shelf_btn') Add To Shelf
+        script(src="/javascripts/shelfButton.js" type="module" defer)
+        button(type='button' class='shelf_btn' id=`shelf-btn${comic.id}`) Add To Shelf
