@@ -1,30 +1,32 @@
 // window.addEventListener("load", (event)=>{
-    const btn= document.querySelector(".btn1234");
-
-    btn.addEventListener("click", async (event)=>{
-      const targetInfo =event.target.className //classList
-      var token = document.getElementsByName("csrfToken").value;
-      console.log(token)
-      const body = { targetInfo };
-      try {
-        const res = await fetch("http://localhost:8080/comics", {
-          method: 'PATCH',
-        	body: JSON.stringify(body),
-          headers: {
-            "Content-Type": "application/json",
-          }
-        });
-        console.log(res)
-      if ((res.ok) && (targetInfo==="btn1234")){
-        console.log("Front End: I will Change HTML and change CSS")
-      }
-      else if (res.ok && (targetInfo==="OtherClassName")){
-        console.log("Change to Another Button HTML and change CSS")
-      }
-    }catch (e) {
-        console.error(e)
+const btn= document.querySelectorAll(".btn_read");
+for (let i=0; i < btn.length; i++){
+  btn[i].addEventListener("click", async (event)=>{
+    const targetInfo =event.target.className //classList
+    const targetValue =event.target.value //maybe use target value instead
+    const body = { targetInfo, targetValue };
+    try {
+      const res = await fetch("http://localhost:8080/comics", {
+        method: 'PATCH',
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+    if (res.ok && (btn[i].innerHTML ==="Want to Read") ){
+      // console.log("Front End: I will Change HTML and change CSS")
+      btn[i].innerHTML = "Has Read"
     }
+    else if (res.ok && (btn[i].innerHTML ==="Has Read")){
+      // console.log("Change to Another Button HTML and change CSS")
+      btn[i].innerHTML = "Want to Read"
+    }
+  }catch (e) {
+      console.error(e)
+  }
 });
+}
+
 
 
 // window.addEventListener("DOMContentloaded", ()=>{

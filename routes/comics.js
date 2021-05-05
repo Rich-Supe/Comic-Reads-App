@@ -16,7 +16,7 @@ router.get('/', asyncHandler(async(req, res) => {
     res.render("comics", { comics })
 }));
 
-router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     const comics = await Comic.findByPk(comicId);
     res.render('comic', { comics })
@@ -24,15 +24,23 @@ router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
 // Stephen - I want to find user and then patch "wants to read"
-router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     //gotta find model root for the "want to read"
-    const wantToRead = await user.findByPk(comicId, {
-        includes: 'JoinComicToUser'
+    const wantToRead = await Comic.findByPk(comicId, {
+        includes: 'Collection'
     });
+    console.log(wantsToRead)
     if(wantToRead === false){
         await wantToRead.update(true);
-    } else {
+    }
+    else if(wantToRead === true) {
+        await wantToRead.update(false);
+    }
+    else if(hasRead === false){
+        await hasRead.update(true);
+    }
+    else if(hasRead === true){
         await wantToRead.update(false);
     }
 }));
@@ -41,16 +49,6 @@ router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
 router.patch('/', asyncHandler(async(req, res) => {
     const { targetInfo }  = req.body
     console.log(targetInfo)
-    // if(targetInfo === "hasRead"){
-    //     await hasRead.update(true);
-    // } else {
-    //     await hasRead.update(false);
-    // }
-    // if(targetInfo === "wantToRead"){
-    //     await wantToRead.update(true);
-    // } else {
-    //     await wantToRead.update(false);
-    // }
     if(targetInfo === "btn1234"){
         console.log("Back End: I will update the database" )
     }
