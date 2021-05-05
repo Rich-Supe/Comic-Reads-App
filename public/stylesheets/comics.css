@@ -7,7 +7,7 @@
     width: 316px;
     height: 475px;
     justify-content: space-evenly;
-    /* justify-items: center; */
+    /* margin: 2px 15px; */
 }
 
 img {
@@ -17,10 +17,7 @@ img {
 }
 
 p {
-    /* position: relative; */
-    margin-top: 0px;
+    margin-bottom: 0px;
     text-align: center;
- /* margin: 0px auto; */
- /* width: 90%; */
- 
+    font-size: 15px;
 }
