@@ -12,7 +12,7 @@ const handleValidationErrors = (req, res, next) => {
 
     if (!validationErrors.isEmpty()) {
       const errors = validationErrors.array().map((error) => error.msg);
-
+      
       const err = Error("Bad request.");
       err.status = 400;
       err.title = "Bad request.";
@@ -53,6 +53,11 @@ check("review")
     .withMessage("Review can't be longer than 280 characters."),
 handleValidationErrors,
 ];
+// =======
+// router.post('/comics/:id(\\d+)', requireAuth, asyncHandler( async(req, res) => {
+//     const { token } = req
+//     const { id } = jwt.decode(token).data
+// >>>>>>> master
 
 router.get(
 "/comics/:id(\\d+)",

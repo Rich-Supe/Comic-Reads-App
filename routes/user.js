@@ -16,7 +16,6 @@ const { loginUser, logoutUser, requireAuth } = require('../auth');
 
 
 router.get('/user/register', csrfProtection, (req, res) => {
-  // res.render('HELLO')
   const user = db.User.build();
   if (res.locals.authenticated) {
     res.redirect('/')
@@ -29,6 +28,13 @@ router.get('/user/register', csrfProtection, (req, res) => {
   });
 });
 
+router.post('/user/demo', asyncHandler(async (req, res) => {
+
+  const { emailAddress, password} = req.body;
+  const user = await db.User.findOne({ where: { emailAddress } });
+  loginUser(req, res, user);
+  res.redirect('/')
+}));
 
 const userValidators = [
   check('firstName')
@@ -121,7 +127,7 @@ router.post('/user/register', csrfProtection, userValidators,
       csrfToken: req.csrfToken(),
     });
   });
-  
+
   const loginValidators = [
     check('emailAddress')
       .exists({ checkFalsy: true })
@@ -130,14 +136,15 @@ router.post('/user/register', csrfProtection, userValidators,
       .exists({ checkFalsy: true })
       .withMessage('Please provide a value for Password'),
   ];
-  
+  //
   router.post('/user/login', csrfProtection, loginValidators,
   asyncHandler(async (req, res) => {
     const {
       emailAddress,
       password,
-    } = req.body;
 
+    } = req.body;
+      console.log(req.body)
     let errors = [];
     const validatorErrors = validationResult(req);
 
@@ -164,7 +171,6 @@ router.post('/user/register', csrfProtection, userValidators,
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
     }
-
     res.render('user-login', {
       title: 'Login',
       emailAddress,

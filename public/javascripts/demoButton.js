@@ -1,22 +1,21 @@
+// const { csrfProtection } = require('.../utils.js');
+
 const demoButton= document.querySelector(".demo_btn");
 
-demoButton.addEventListener('click', (event)=>{
+demoButton.addEventListener("click", async (event)=>{
     console.log("This is the Demo Button!")
-    const email = "demo@demo.com";
+    const emailAddress = "demo@demo.com";
     const password = "password";
-    const body = { email, password };
+    const body = { emailAddress, password };
     try {
-    const res = await fetch("http://localhost:8080/user/login", {
+    const res = await fetch(`/user/demo`, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
           "Content-Type": "application/json",
         },
       });
-      if (!res.ok) {
-        throw res;
-      }
-    //  window.location.href = "/";
+      window.location.href = "/";
     } catch (err) {
       console.log(err);
     }
