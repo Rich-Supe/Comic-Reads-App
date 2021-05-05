@@ -55,7 +55,7 @@ router.delete('/comics/:id(\\d+)', asyncHandler(async (req, res, next) => {
             comicId: comicId
         }
     });
-    if (tweet) {
+    if (review) {
         await review.destroy();
         res.json({ review: `Deleted comment with id of ${req.params.id}`});
     }
