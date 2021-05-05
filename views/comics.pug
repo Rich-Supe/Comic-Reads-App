@@ -4,10 +4,6 @@ extends layout
 block content
   link(rel="stylesheet" href="/stylesheets/comics.css")
   script(src="/javascripts/comics.js" type="module" defer)
-  
-  button(type='button' class='btn1234') Test Button
-  script(src="/javascripts/demoButton.js" type="module" defer)
-  button(type='button' class='demo_btn') Demo User
 
   div(id='comicsGrid')
     each comic in comics

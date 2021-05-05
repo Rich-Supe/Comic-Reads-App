@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-
 const db = require('../db/models');
+const {Shelf} = db;
 const { csrfProtection, asyncHandler } = require('./utils');
 const bcrypt = require('bcryptjs');
-
 
 const { loginUser, logoutUser, requireAuth } = require('../auth');
 
@@ -18,7 +17,7 @@ const { loginUser, logoutUser, requireAuth } = require('../auth');
 router.get('/user/register', csrfProtection, (req, res) => {
   const user = db.User.build();
   if (res.locals.authenticated) {
-    res.redirect('/')
+    return res.redirect('/')
   }
 
   res.render('user-register', {
@@ -28,8 +27,15 @@ router.get('/user/register', csrfProtection, (req, res) => {
   });
 });
 
-router.post('/user/demo', asyncHandler(async (req, res) => {
+router.get('/user/:id(\\d+)', async (req, res) => {
+  const shelves = await Shelf.findAll({where: {userId: req.params.id}})
+  res.render('user-profile')
+})
 
+router.post('/user/demo', asyncHandler(async (req, res) => {
+  if (res.locals.authenticated) {
+    res.redirect('/')
+  }
   const { emailAddress, password} = req.body;
   const user = await db.User.findOne({ where: { emailAddress } });
   loginUser(req, res, user);
@@ -144,7 +150,6 @@ router.post('/user/register', csrfProtection, userValidators,
       password,
 
     } = req.body;
-      console.log(req.body)
     let errors = [];
     const validatorErrors = validationResult(req);
 
