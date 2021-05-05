@@ -8,7 +8,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Shelf.associate = function(models) {
     // associations can be defined here
-    Shelf.hasMany(models.Comic, { foreignKey: 'shelfId'});
+    // Shelf.hasMany(models.Comic, { foreignKey: 'shelfId'});
+    const columnMapping2 = {
+      through: 'Libraries',
+      foreignKey: 'shelfId',
+      otherKey: 'comicId'
+    }
+    Shelf.belongsToMany( models.Comic, columnMapping2);
+
     Shelf.belongsTo(models.User, { foreignKey: 'userId'})
   };
   return Shelf;

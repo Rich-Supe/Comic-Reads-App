@@ -4,29 +4,26 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
-const { Comic } = db;
+const { Comic, User } = db;
 const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
 
-
-
-router.get('/', asyncHandler(async(req, res) => {
-    // console.log("From the JavaScript File I'm reaching here")
+router.get('/', asyncHandler( async(req, res) => {
     const comics = await Comic.findAll();
-    res.render("comics", { comics })
+    console.log("HELLO")
+    res.render('comics', { comics })
 }));
 
-
-
 router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
-
-    res.render('(:')
+    const comicId = parseInt(req.params.id, 10);
+    const comics = await Comic.findByPk(comicId);
+    res.render('comic', { comics })
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
 // Stephen - I want to find user and then patch "wants to read"
-router.patch('./:id(\\d+)', asyncHandler(async(req, res) => {
+router.get('./:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     //gotta find model root for the "want to read"
     const wantToRead = await user.findByPk(comicId, {
@@ -41,19 +38,23 @@ router.patch('./:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 // Stephen - I want to find user and then patch "has read"
-router.patch('./:id(\\d+)', asyncHandler(async(req, res) => {
-    const comicId = parseInt(req.params.id, 10);
-    //gotta find model root for the "want to read"
-    const hasRead = await user.findByPk(comicId, {
-        includes: 'JoinComicToUser'
-    });
-    console.log(hasRead)
-    //figure out what is in the body and updated the has_read
-    if(hasRead === false){
-        await hasRead.update(true);
-    } else {
-        await hasRead.update(false);
+router.patch('/', asyncHandler(async(req, res) => {
+    const { targetInfo }  = req.body
+    console.log(targetInfo)
+    // if(targetInfo === "hasRead"){
+    //     await hasRead.update(true);
+    // } else {
+    //     await hasRead.update(false);
+    // }
+    // if(targetInfo === "wantToRead"){
+    //     await wantToRead.update(true);
+    // } else {
+    //     await wantToRead.update(false);
+    // }
+    if(targetInfo === "btn1234"){
+        console.log("Back End: I will update the database" )
     }
+    res.json({ targetInfo });
 }));
-//End of Stephen//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 module.exports = router

@@ -1,32 +1,59 @@
-const { User, Comics } = db;
-// Stephen - Waiting on how button classes will be laid out
+// window.addEventListener("load", (event)=>{
+    const btn= document.querySelector(".btn1234");
 
-// This function loads the user's current read and want to read status////////////////////////////////
-// on the comics page I will need to check if that user's read status and change color and innerText
-window.addEventListener("DOMContentLoaded", async (event)=>{
-    // Session {
-    //     cookie: { path: '/', _expires: null, originalMaxAge: null, httpOnly: true },
-    //     auth: { userId: 11 }
-    //   }
-    const {userId: { id }} = await res.json();
-    const body = { id };
-    try {
-        //need to fleshout the profile page so I can block out the "has read"
+    btn.addEventListener("click", async (event)=>{
+      const targetInfo =event.target.className //classList
+      const body = { targetInfo };
+      try {
         const res = await fetch("http://localhost:8080/comics", {
-          method: "GET",
-          body: JSON.stringify(body),
+          method: 'PATCH',
+        	body: JSON.stringify(body),
           headers: {
             "Content-Type": "application/json",
-        }
-    });
-
-} catch (e) {
-    console.error(e)
-}
-
-
-
+          }
+        });
+        console.log(res)
+      if ((res.ok) && (targetInfo==="btn1234")){
+        console.log("Front End: I will Change HTML and change CSS")
+      }
+      else if (res.ok && (targetInfo==="OtherClassName")){
+        console.log("Change to Another Button HTML and change CSS")
+      }
+    }catch (e) {
+        console.error(e)
+    }
 });
+
+
+// window.addEventListener("DOMContentloaded", ()=>{
+
+
+// // const { User, Comics } = db;
+// // Stephen - Waiting on how button classes will be laid out
+// const button= window.querySelector(".btn");
+// // This function loads the user's current read and want to read status////////////////////////////////
+// // on the comics page I will need to check if that user's read status and change color and innerText
+// console.log(button)
+// console.log("First Hello")
+// button.addEventListener("click", async ()=>{
+//     console.log("Second Hello")
+    // const body = { working:"working" };
+//     try {
+//         const res = await fetch("http://localhost:8080/comics", {
+//           method: "GET",
+//           body: JSON.stringify(body),
+//           headers: {
+//             "Content-Type": "application/json",
+//         }
+//     });
+// //     console.log(res)
+// } catch (e) {
+//     console.error(e)
+// }
+
+
+
+// });
 //     });
 //     const comics = await Comics.findAll();
 //     const data = await res.json();
@@ -66,3 +93,4 @@ window.addEventListener("DOMContentLoaded", async (event)=>{
 //         console.log(err)
 //       }
 //     });
+// });
