@@ -1,0 +1,20 @@
+body {
+  background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 10px; */
+    background-color: skyblue;
+}
+
+span {
+    font-size: 20px;
+}
+
+#navButtons {
+    display: flex;
+    flex-direction: row;
+}   
