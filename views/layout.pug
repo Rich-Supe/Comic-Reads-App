@@ -4,15 +4,21 @@ html
     block head
       title="Comic Reads"
       link(rel='stylesheet' href='/stylesheets/reset.css')
+      link(rel='stylesheet' href='/stylesheets/main.css')
   body
     header
       nav
         if locals.authenticated
           span(class='navbar-text px-4') Welcome #{user.firstName}!
-          form(class='form-inline pr-4' action='/user/logout' method='post')
-            button(class='btn btn-sm btn-warning' type='submit') Logout
-          form(class='form-inline pr-4' action='/user/profile/:id(\\d+)' method='post')
-            button(class='btn btn-sm btn-warning' type='submit') Profile
+          a(href='/') Home
+          a(href=`/user/${user.id}`) Profile
+          a(href='/comics') Comics
+
+          div(id='navButtons')
+            form(class='form-inline pr-4' action='/user/logout' method='post')
+              button(class='btn btn-sm btn-warning' type='submit') Logout
+            form(class='form-inline pr-4' action='/user/profile/:id(\\d+)' method='post')
+              button(class='btn btn-sm btn-warning' type='submit') Profile
         else
           span(class='navbar-text px-4')
             a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h2 Review Form
+    form(class="comment")
+        .form-group
+            label(for='message') Message
+            input#message.form-control(type='message', name="review", placeholder='Comment here')
+        button.btn.btn-primary(type='submit') Submit
+
+    div(class="review-container")
+
+  script(type="module" src="../public/javascripts/reviewForm.js")
