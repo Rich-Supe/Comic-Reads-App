@@ -9,10 +9,11 @@ const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
 
-router.get('/', asyncHandler( async(req, res) => {
+
+
+router.get('/', asyncHandler(async(req, res) => {
     const comics = await Comic.findAll();
-    console.log("HELLO")
-    res.render('comics', { comics })
+    res.render("comics", { comics })
 }));
 
 router.get('./:id(\\d+)', asyncHandler(async(req, res) => {

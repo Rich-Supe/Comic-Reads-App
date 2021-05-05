@@ -1,0 +1,21 @@
+#comicsGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comicsCells {
+    width: 316px;
+    height: 475px;
+    justify-content: space-evenly;
+}
+
+img {
+    height: 90%;
+    width: 90%;
+}
+
+p {
+ text-align: center;
+ margin-top: 0px;
+ width: 90%;
+}
