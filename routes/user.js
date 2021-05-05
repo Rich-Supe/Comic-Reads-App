@@ -121,7 +121,7 @@ router.post('/user/register', csrfProtection, userValidators,
       csrfToken: req.csrfToken(),
     });
   });
-  
+
   const loginValidators = [
     check('emailAddress')
       .exists({ checkFalsy: true })
@@ -130,14 +130,14 @@ router.post('/user/register', csrfProtection, userValidators,
       .exists({ checkFalsy: true })
       .withMessage('Please provide a value for Password'),
   ];
-  
+
   router.post('/user/login', csrfProtection, loginValidators,
   asyncHandler(async (req, res) => {
     const {
       emailAddress,
       password,
     } = req.body;
-
+    
     let errors = [];
     const validatorErrors = validationResult(req);
 
