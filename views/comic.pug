@@ -1,4 +1,12 @@
 extends layout
+
 block content
-  script(src="/javascripts/comics.js" type="module" defer)
-  button(type='button' class='btn_read') Want to Read
+    link(rel="stylesheet" href="/stylesheets/comic.css")
+    div(id="catalogueInfo")
+        //- div(id="coverImage")
+        img(src= comic.coverUrl)
+        p= comic.title
+        p= `Written by: ${comic.author}`
+        p= `Genre: ${comic.genre}`
+        each review in reviews
+            p= review.review

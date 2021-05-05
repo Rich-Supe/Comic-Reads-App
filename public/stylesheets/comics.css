@@ -7,15 +7,17 @@
     width: 316px;
     height: 475px;
     justify-content: space-evenly;
+    /* margin: 2px 15px; */
 }
 
 img {
     height: 90%;
     width: 90%;
+    margin: auto 5%;
 }
 
 p {
- text-align: center;
- margin-top: 0px;
- width: 90%;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 15px;
 }

@@ -3,6 +3,7 @@ module.exports = {
   environment: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 8080,
   sessionSecret: process.env.SESSION_SECRET,
+  // baseUrl: process.env.BASE_URL||'http://localhost:8080',
   db: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
