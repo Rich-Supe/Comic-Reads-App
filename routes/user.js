@@ -18,7 +18,7 @@ const { loginUser, logoutUser, requireAuth } = require('../auth');
 router.get('/user/register', csrfProtection, (req, res) => {
   const user = db.User.build();
   if (res.locals.authenticated) {
-    res.redirect('/')
+    return res.redirect('/')
   }
 
   res.render('user-register', {
@@ -29,7 +29,9 @@ router.get('/user/register', csrfProtection, (req, res) => {
 });
 
 router.post('/user/demo', asyncHandler(async (req, res) => {
-
+  if (res.locals.authenticated) {
+    res.redirect('/')
+  }
   const { emailAddress, password} = req.body;
   const user = await db.User.findOne({ where: { emailAddress } });
   loginUser(req, res, user);

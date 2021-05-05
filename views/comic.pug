@@ -1,12 +1,12 @@
-extends layout 
+extends layout
 
-block content 
+block content
     link(rel="stylesheet" href="/stylesheets/comic.css")
     div(id="catalogueInfo")
         //- div(id="coverImage")
         img(src= comic.coverUrl)
-        p= comic.title 
-        p= `Written by: ${comic.author}` 
+        p= comic.title
+        p= `Written by: ${comic.author}`
         p= `Genre: ${comic.genre}`
-        each review in reviews 
+        each review in reviews
             p= review.review

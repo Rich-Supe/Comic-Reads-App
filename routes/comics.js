@@ -4,12 +4,10 @@ const router = express.Router();
 const db = require('../db/models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
-const { Comic, User, Review } = db;
+const { Comic, User, Review, Collection} = db;
 const { check, validationResult } = require('express-validator');
 
 router.use(requireAuth)
-
-
 
 router.get('/', asyncHandler(async(req, res) => {
     const comics = await Comic.findAll();
@@ -29,34 +27,21 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     //gotta find model root for the "want to read"
-    const wantToRead = await user.findByPk(comicId, {
-        includes: 'JoinComicToUser'
-    });
-    if(wantToRead === false){
-        await wantToRead.update(true);
-    } else {
-        await wantToRead.update(false);
-    }
+    let currUser = req.session.auth.userId
+    const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
+    await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
+    res.json({"post":"success"});
+
 }));
 
 // Stephen - I want to find user and then patch "has read"
-router.patch('/', asyncHandler(async(req, res) => {
-    const { targetInfo }  = req.body
-    console.log(targetInfo)
-    // if(targetInfo === "hasRead"){
-    //     await hasRead.update(true);
-    // } else {
-    //     await hasRead.update(false);
-    // }
-    // if(targetInfo === "wantToRead"){
-    //     await wantToRead.update(true);
-    // } else {
-    //     await wantToRead.update(false);
-    // }
-    if(targetInfo === "btn1234"){
-        console.log("Back End: I will update the database" )
-    }
-    res.json({ targetInfo });
+router.post('/', asyncHandler(async(req, res) => {
+    let currUser = req.session.auth.userId
+    const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
+    bookId = parseInt(bookId)
+    await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:bookId, userId:currUser });
+    res.json({"post":"success"});
+
 }));
 
 module.exports = router
