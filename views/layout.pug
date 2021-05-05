@@ -10,6 +10,10 @@ html
       nav
         if locals.authenticated
           span(class='navbar-text px-4') Welcome #{user.firstName}!
+          a(href='/') Home
+          a(href=`/user/${user.id}`) Profile
+          a(href='/comics') Comics
+
           div(id='navButtons')
             form(class='form-inline pr-4' action='/user/logout' method='post')
               button(class='btn btn-sm btn-warning' type='submit') Logout
