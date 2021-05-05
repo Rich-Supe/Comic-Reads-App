@@ -6,7 +6,7 @@ html
       link(rel='stylesheet' href='/stylesheets/reset.css')
   body
     header
-      nav 
+      nav
         if locals.authenticated
           span(class='navbar-text px-4') Welcome #{user.firstName}!
           form(class='form-inline pr-4' action='/user/logout' method='post')
@@ -17,4 +17,6 @@ html
           span(class='navbar-text px-4')
             a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
             a(class='btn btn-sm btn-dark' href='/user/register') Register
+            script(src="/javascripts/demoButton.js" type="module" defer)
+            button(type='button' class='demo_btn') Demo User
     block content
