@@ -1,4 +1,5 @@
 // const { csrfProtection } = require('.../utils.js');
+
 const demoButton= document.querySelector(".demo_btn");
 
 demoButton.addEventListener("click", async (event)=>{
@@ -7,7 +8,7 @@ demoButton.addEventListener("click", async (event)=>{
     const password = "password";
     const body = { emailAddress, password };
     try {
-    const res = await fetch("http://localhost:8080/user/demo", {
+    const res = await fetch(`/user/demo`, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
