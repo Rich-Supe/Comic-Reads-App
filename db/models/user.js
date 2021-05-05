@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
 
     User.belongsToMany( models.Comic, columnMapping);
     User.hasMany( models.Shelf, { foreignKey: "userId"});
-    User.hasMany( models.Review, { foreignKey: "userId" }); 
+    User.hasMany( models.Review, { foreignKey: "userId" });
   };
   return User;
 };

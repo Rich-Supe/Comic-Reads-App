@@ -1,7 +1,7 @@
 includes utils.pug
 
-block content 
+block content
     mixin shelf(shelfId)
     section(class="shelf")
-        each comic in comics 
+        each comic in comics
             +comicCard( comic.comicUrl, comic.title, comic.author, comic.genre, Collections.hasRead, comic.id)
