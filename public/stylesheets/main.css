@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
+    background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
 }
 
 nav {
@@ -10,6 +10,10 @@ nav {
     background-color: skyblue;
 }
 
+a {
+    font-size: 20px;
+}
+
 span {
     font-size: 20px;
 }
@@ -17,4 +21,4 @@ span {
 #navButtons {
     display: flex;
     flex-direction: row;
-}   
+}
