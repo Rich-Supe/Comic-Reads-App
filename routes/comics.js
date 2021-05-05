@@ -24,13 +24,32 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
 // Stephen - I want to find user and then patch "wants to read"
-router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     //gotta find model root for the "want to read"
-    const wantToRead = await Comic.findByPk(comicId, {
+    const Read = await Comic.findByPk(comicId, {
         includes: 'Collection'
     });
-    console.log(wantsToRead)
+    console.log(WantToRead)
+    if(wantToRead === false){
+        await Read.update(true);
+    }
+    else if(wantToRead === true) {
+        await Read.update(false);
+    }
+    else if(hasRead === false){
+        await Read.update(true);
+    }
+    else if(hasRead === true){
+        await wantToRead.update(false);
+    }
+}));
+
+// Stephen - I want to find user and then patch "has read"
+router.patch('/', asyncHandler(async(req, res) => {
+    const { targetInfo }  = req.body
+    const Read = await Collection.findByPk(comicId)
+
     if(wantToRead === false){
         await wantToRead.update(true);
     }
@@ -42,15 +61,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     }
     else if(hasRead === true){
         await wantToRead.update(false);
-    }
-}));
-
-// Stephen - I want to find user and then patch "has read"
-router.patch('/', asyncHandler(async(req, res) => {
-    const { targetInfo }  = req.body
-    console.log(targetInfo)
-    if(targetInfo === "btn1234"){
-        console.log("Back End: I will update the database" )
     }
     res.json({ targetInfo });
 }));
