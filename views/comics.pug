@@ -2,14 +2,13 @@
 extends layout
 
 block content
+  link(rel="stylesheet" href="/stylesheets/comics.css")
   script(src="/javascripts/comics.js" type="module" defer)
   button(type='button' class='btn1234') Test Button
   script(src="/javascripts/demoButton.js" type="module" defer)
   button(type='button' class='demo_btn') Demo User
-  each el in comics
-    tr
-      td(scope='row') #{el.id}
-      td #{el.title}
-      td #{el.author}
-      td #{el.genre}
-      td #{el.coverUrl}
+  div(id='comicsGrid')
+    each comic in comics
+      div(class='comicsCells') 
+        img(src=comic.coverUrl)
+        p= comic.title
