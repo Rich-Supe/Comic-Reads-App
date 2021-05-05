@@ -11,6 +11,6 @@ block content
   div(id='comicsGrid')
     each comic in comics
       div(class='comicsCells') 
-        img(src=comic.coverUrl)
-        p
-          a(href=`${baseUrl}${comic.id}`)= comic.title
+        p= comic.title
+        a(href=`/comics/${comic.id}`)
+          img(src=comic.coverUrl)

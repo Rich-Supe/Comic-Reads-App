@@ -1,7 +1,9 @@
 extends layout 
 
 block content 
-    div
+    link(rel="stylesheet" href="/stylesheets/comic.css")
+    div(id="catalogueInfo")
+        //- div(id="coverImage")
         img(src= comic.coverUrl)
         p= comic.title 
         p= `Written by: ${comic.author}` 
