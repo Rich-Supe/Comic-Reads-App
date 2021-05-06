@@ -12,12 +12,9 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-      return queryInterface.bulkInsert('Shelves', [
-        {name: 'Recommended 1', userId: 1, isRecommended: true},
-        {name: 'Recommended 2', userId: 1, isRecommended: true},
-        {name: 'Recommended 3', userId: 1, isRecommended: true},
-        {name: 'Recommended 4', userId: 1, isRecommended: true},
-        {name: 'Recommended 5', userId: 1, isRecommended: true},
+      return queryInterface.bulkInsert('Libraries', [
+        {shelfId: 1, comicId: 1, createdAt: new Date(), updatedAt: new Date()},
+        {shelfId: 2, comicId: 2, createdAt: new Date(), updatedAt: new Date()}
       ]);
   },
 
@@ -29,6 +26,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-      return queryInterface.bulkDelete('Shelves', null, {});
+      return queryInterface.bulkDelete('Libraries', null, {});
   }
 };
