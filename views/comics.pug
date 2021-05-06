@@ -11,4 +11,19 @@ block content
           a(href=`/comics/${comic.id}`)
             img(src=comic.coverUrl)
         button(type='button' class='shelf_btn') Add To Shelf
-        button(type='button' class='btn_read' id=comic.id) Want To Read
+        //- button(type='button' class='btn_read' id=comic.id) Want To Read
+        //- el should be status[i]
+        each el in status
+          if ((el.hasRead===true) && (el.wantsToRead===true) &&  (el.comicId===comic.id))
+            button(type='button' class='btn_read' id=comic.id) Want To Read
+          else if ((el.hasRead===false) && (el.wantsToRead===true) &&  (el.comicId===comic.id))
+            button(type='button' class='btn_read' id=comic.id) Has Read
+          else if ((el.hasRead===true) && (el.wantsToRead===false) &&  (el.comicId===comic.id))
+            button(type='button' class='btn_read' id=comic.id) Re-Read
+          //- else
+          //-   button(type='button' class='btn_read' id=comic.id) Want To Read
+
+
+          //- Option Alternate with the OG buttons
+          //- script
+          //- document.querySelectorAll(".btn_read")[el.comicId].innerHTML = "CHICKEN!"

@@ -11,7 +11,12 @@ router.use(requireAuth)
 
 router.get('/', asyncHandler(async(req, res) => {
     const comics = await Comic.findAll();
-    res.render("comics", { comics })
+    let currUser = req.session.auth.userId
+    const status = await Collection.findAll({where:{userId:currUser}});
+    console.log(status[0].hasRead)
+    console.log(status[0].wantsToRead)
+    console.log(status[0].comicId)
+    res.render("comics", { comics, status })
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {

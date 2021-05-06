@@ -1,6 +1,7 @@
 // window.addEventListener("load", (event)=>{
 let btn = document.querySelectorAll(".btn_read");
 for(let i=0; i<btn.length; i++){
+  /////////////////////////////////////////////////////////
   btn[i].addEventListener("click", async (event)=>{
     const targetInfo =event.target.className; //classList
     const bookId =event.target.id; // book id
@@ -12,16 +13,16 @@ for(let i=0; i<btn.length; i++){
       wantToRead = true
       hasRead = false
     }
-      else if (btn[i].innerText==="Has Read"){
-      btn[i].innerText = "Re-Read"
-      wantToRead = false
+    else if (btn[i].innerText==="Has Read"){
+    btn[i].innerText = "Re-Read"
+    wantToRead = false
+    hasRead = true
+    }
+    else if (btn[i].innerText==="Re-Read"){
+      btn[i].innerText = "Want To Read"
+      wantToRead = true
       hasRead = true
       }
-        else if (btn[i].innerText==="Re-Read"){
-          btn[i].innerText = "Want To Read"
-          wantToRead = true
-          hasRead = true
-          }
 /////////////////////////////////////////////////////////////////
     const body = { targetInfo, bookId, hasRead, wantToRead  };
       console.log(body)
