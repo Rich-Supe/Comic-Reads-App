@@ -28,14 +28,15 @@ router.get('/user/register', csrfProtection, (req, res) => {
 });
 
 router.get('/user/:id(\\d+)', async (req, res) => {
-  // let currUser = req.session.auth.userId
+  // let currUserId = req.session.auth.userId
+  const id = parseInt(req.params.id, 10);
   //FIX THIS QUERY >:(
-  const comics = await Comic.findAll({include: Shelf});
-  // const library = await Shelf.findOne({where: {userId: }});
-
   const shelves = await Shelf.findAll({include: Comic});
-  console.log(shelves)
-  res.render('user-profile', { comics, shelves})
+  const userShelves = await Shelf.findAll({where:{userId: id}, include: Comic})
+  // console.log(shelves)
+  // console.log(comics)
+  // console.log(userShelves)
+  res.render('user-profile', { shelves, userShelves})
 })
 
 router.post('/user/demo', asyncHandler(async (req, res) => {
