@@ -1,5 +1,3 @@
-// const { csrfProtection } = require('.../utils.js');
-
 const demoButton= document.querySelector(".demo_btn");
 
 demoButton.addEventListener("click", async (event)=>{

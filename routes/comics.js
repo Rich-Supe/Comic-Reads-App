@@ -10,12 +10,20 @@ const { check, validationResult } = require('express-validator');
 router.use(requireAuth)
 
 router.get('/', asyncHandler(async(req, res) => {
-    const comics = await Comic.findAll();
+const comics = await Comic.findAll();
+
     let currUser = req.session.auth.userId
-    const status = await Collection.findAll({where:{userId:currUser}});
-    console.log(status[0].hasRead)
-    console.log(status[0].wantsToRead)
-    console.log(status[0].comicId)
+    const statusABC = await Collection.findAll({where:{userId:currUser}});
+
+    // console.log(status[0].hasRead)
+    // console.log(status[0].wantsToRead)
+    // console.log(status[0].comicId)
+    let status = {}
+    statusABC.forEach(el =>{
+        status[el.id]=el.dataValues
+    })
+    // status = JSON.stringify(status)
+    console.log(status)
     res.render("comics", { comics, status })
 }));
 
