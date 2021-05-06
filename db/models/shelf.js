@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     isRecommended: DataTypes.BOOLEAN,
     comicId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
-  }, {});
+  }, { timestamps: false });
   Shelf.associate = function(models) {
     // associations can be defined here
     // Shelf.hasMany(models.Comic, { foreignKey: 'shelfId'});
