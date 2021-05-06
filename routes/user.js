@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const db = require('../db/models');
-const {Shelf} = db;
+const { Shelf, Comic } = db;
 const { csrfProtection, asyncHandler } = require('./utils');
 const bcrypt = require('bcryptjs');
 
@@ -28,8 +28,10 @@ router.get('/user/register', csrfProtection, (req, res) => {
 });
 
 router.get('/user/:id(\\d+)', async (req, res) => {
+  //FIX THIS QUERY
+  const comics = await Comic.findAll();
   const shelves = await Shelf.findAll({where: {userId: req.params.id}})
-  res.render('user-profile')
+  res.render('user-profile', { shelves, comics })
 })
 
 router.post('/user/demo', asyncHandler(async (req, res) => {
