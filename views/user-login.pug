@@ -4,6 +4,7 @@ extends layout.pug
 include utils.pug
 
 block content
+  script(src="/javascripts/demoButton.js" type="module" defer)
   +validationErrorSummary(errors)
   form(action='/user/login' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
@@ -11,8 +12,9 @@ block content
     +field('Password', 'password', null, 'password')
     div(class='py-4')
       button(type='submit' class='btn btn-primary') Login
-      a(href='/' class='btn btn-warning ml-2') Cancel
+      //- a(href='/' class='btn btn-warning ml-2') Cancel
     div
+    script(src="/javascripts/demoButton.js" type="module" defer)
+    button(type='button' class='demo_btn') Login As Demo User
     p: a(href='/user/register') Don't have an account?
-  script(src="/javascripts/demoButton.js" type="module" defer)
 
