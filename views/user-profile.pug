@@ -3,11 +3,11 @@ extends layout
 include shelf.pug 
 
 block content
-
-    div(class="user__shelves")
-    h1 Your Shelves 
-        each shelf in shelves
-            h2 Shelf: #{shelf.name}
-            +shelf(shelf.id)
+    if(shelves)
+        div(class="user__shelves")
+        h1 Your Shelves 
+            each shelf in shelves
+                h2 Shelf: #{shelf.name}
+                +shelf(shelf.id)
 
 //- div(class)
