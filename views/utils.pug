@@ -12,7 +12,7 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text')
     label(for=fieldName)= labelText
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
-mixin comicCard( imageUrl, title, author, genre, readStatus, id )
+mixin comicCard( imageUrl, title, author, genre, id )
   div(class='comic__cards' id= id)
     picture
       img(src=imageUrl)
