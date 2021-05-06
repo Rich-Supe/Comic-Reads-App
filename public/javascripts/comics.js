@@ -8,30 +8,40 @@ for(let i=0; i<btn.length; i++){
     let wantToRead;
     //////////////////////////////////////////////////////////
     if (btn[i].innerText==="Want To Read"){
-      // console.log("Front End: I will Change HTML and change CSS")
       btn[i].innerText= "Has Read"
       wantToRead = true
       hasRead = false
     }
       else if (btn[i].innerText==="Has Read"){
-      // console.log("Change to Another Button HTML and change CSS")
-      btn[i].innerText = "Want To Read"
-      hasRead = true
+      btn[i].innerText = "Re-Read"
       wantToRead = false
+      hasRead = true
       }
+        else if (btn[i].innerText==="Re-Read"){
+          btn[i].innerText = "Want To Read"
+          wantToRead = true
+          hasRead = true
+          }
 /////////////////////////////////////////////////////////////////
     const body = { targetInfo, bookId, hasRead, wantToRead  };
+      console.log(body)
     try {
       const res = await fetch("http://localhost:8080/comics", {
         method: 'POST',
         body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json",
-        }
+        headers: {"Content-Type": "application/json",}
       });
-      return res.json()
-  }catch (e) {
-      console.error(e)
-  }
-});
+      let ans = await res.json()
+
+      if(ans.post === "exists"){
+        const res = await fetch("http://localhost:8080/comics", {
+          method: 'PATCH',
+          body: JSON.stringify(body),
+          headers: {"Content-Type": "application/json",}
+        });
+      }
+    } catch (e){
+      console.log(e);
+    }
+  })
 }

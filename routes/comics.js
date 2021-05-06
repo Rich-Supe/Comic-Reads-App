@@ -23,7 +23,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
-// Stephen - I want to find user and then patch "wants to read"
 router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comicId = parseInt(req.params.id, 10);
     //gotta find model root for the "want to read"
@@ -31,17 +30,26 @@ router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
     const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
     await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
     res.json({"post":"success"});
-
 }));
 
-// Stephen - I want to find user and then patch "has read"
 router.post('/', asyncHandler(async(req, res) => {
     let currUser = req.session.auth.userId
-    const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
-    bookId = parseInt(bookId)
-    await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:bookId, userId:currUser });
-    res.json({"post":"success"});
+    const { bookId, hasRead, wantToRead }  = req.body //targetInfo,
+    const collection = await Collection.findOne({where:{comicId:bookId,userId:currUser}});
+    if(collection === null){
+        await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:bookId, userId:currUser });
+        res.json({"post":"success"}); // some issue here
+    } else {
+        res.json({"post":"exists"});  //some issue here
+    }
+}));
 
+router.patch('/', asyncHandler(async(req, res) => {
+    let currUser = req.session.auth.userId
+    const { bookId, hasRead, wantToRead }  = req.body
+    const collection = await Collection.findOne({where:{comicId:bookId,userId:currUser}});
+    await collection.update({ hasRead:hasRead, wantsToRead:wantToRead });
+    res.json({"patch":"success"});
 }));
 
 module.exports = router
