@@ -34,7 +34,7 @@ router.get('/user/:id(\\d+)', async (req, res) => {
   // const library = await Shelf.findOne({where: {userId: }});
 
   const shelves = await Shelf.findAll({include: Comic});
-  console.log(shelves)
+  //console.log(shelves)
   res.render('user-profile', { comics, shelves})
 })
 
