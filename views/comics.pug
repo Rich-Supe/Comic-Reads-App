@@ -9,9 +9,13 @@ block content
   div(id='comicsGrid')
     each comic in comics
       div(class='comicsCells')
+        div(class='title')
+          p= comic.title
         div(class="comic_img")
           a(href=`/comics/${comic.id}`)
             img(src=comic.coverUrl)
 
-        button(type='button' class='shelf_btn') Add To Shelf
-        button(type='button' class='btn_read' id=comic.id) Want To Read
+        div(class='cellButtons')
+          button(type='button' class='shelf_btn') Add To Shelf
+          button(type='button' class='btn_read' id=comic.id) Want To Read
+

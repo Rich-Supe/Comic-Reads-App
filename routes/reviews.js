@@ -12,7 +12,7 @@ const handleValidationErrors = (req, res, next) => {
 
     if (!validationErrors.isEmpty()) {
       const errors = validationErrors.array().map((error) => error.msg);
-      
+
       const err = Error("Bad request.");
       err.status = 400;
       err.title = "Bad request.";
@@ -136,17 +136,17 @@ router.delete(
 
 
 // // add rating
-router.put('/comics/:id(\\d+)', asyncHandler(async(req, res, next) => {
-    const rating = await Comic.findByPk({
-        where: {
-            id: req.params.id
-        },
-    });
-    if (rating) {
-     await rating.update({ rating: req.body.rating });
-     res.json({ rating });
-    }
-}));
+// router.put('/comics/:id(\\d+)', asyncHandler(async(req, res, next) => {
+//     const rating = await Comic.findByPk({
+//         where: {
+//             id: req.params.id
+//         },
+//     });
+//     if (rating) {
+//      await rating.update({ rating: req.body.rating });
+//      res.json({ rating });
+//     }
+// }));
 
 // const { token } = req
 // const { id } = jwt.decode(token).data
