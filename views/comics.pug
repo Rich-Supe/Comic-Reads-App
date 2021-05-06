@@ -4,11 +4,17 @@ extends layout
 block content
   link(rel="stylesheet" href="/stylesheets/comics.css")
   script(src="/javascripts/comics.js" type="module" defer)
+  script(src="/javascripts/shelfButton.js" type="module" defer)
+
   div(id='comicsGrid')
     each comic in comics
       div(class='comicsCells')
         div(class="comic_img")
           a(href=`/comics/${comic.id}`)
             img(src=comic.coverUrl)
+
         button(type='button' class='shelf_btn') Add To Shelf
         button(type='button' class='btn_read' id=comic.id) Want To Read
+
+   
+       
