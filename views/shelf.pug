@@ -4,4 +4,4 @@ mixin shelf(shelfId)
     section(class="shelf")
     h3 HELLO
         each comic in shelves
-            +comicCard( comic.comicUrl, comic.title, comic.author, comic.genre, comic.id)
+            +comicCard( comic.coverUrl, comic.title, comic.author, comic.genre, comic.id)
