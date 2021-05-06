@@ -4,16 +4,13 @@
 }
 
 .comicsCells {
-    width: 316px;
-    height: 475px;
     justify-content: space-evenly;
-    /* margin: 2px 15px; */
+    padding: 15px;
 }
 
 img {
-    height: 90%;
-    width: 90%;
-    margin: auto 5%;
+    width: 316px;
+    height: 475px;
 }
 
 p {
@@ -21,3 +18,13 @@ p {
     text-align: center;
     font-size: 15px;
 }
+
+.cellButtons {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* button {
+    margin: 2px 8px;
+} */
