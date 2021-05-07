@@ -34,15 +34,11 @@ router.get('/user/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 router.post('/user/:id(\\d+)', asyncHandler( async (req, res) => {
-  const userId = res.locals.user.id;
-  const { shelfButtonId } = req.body;
-  // const targetShelf = await Shelf.findOne({where:{userId, shelfId: 6}})
+  const {shelfButtonId}  = req.body;
   await Library.create({
     shelfId : 6,
     comicId: shelfButtonId
 });
-// const userShelves = await Shelf.findAll({where:{userId}, include: Comic});
-//   res.render('user-profile', {userShelves})
   res.json({"key" : "comic added"});
 }));
 

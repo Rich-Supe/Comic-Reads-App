@@ -1,5 +1,4 @@
 
-
 const shelfButton = document.querySelectorAll(".shelf_btn");
 
 shelfButton.forEach(button => {
@@ -8,6 +7,7 @@ shelfButton.forEach(button => {
         const shelfButtonId = e.target.id
         console.log('This comic was added to your shelf!');
         const body = {shelfButtonId};
+        console.log('=======', body)
     try {
         const res = await fetch(`/user/1`, {
         method: 'POST',
@@ -42,8 +42,9 @@ removeShelfButton.forEach(button => {
             "Content-Type": "application/json",
         }
         });
-
         button.innerHTML = 'Removed!'
+        // Location.reload();
+        window.location.href = '/user/1'
     } catch (e){
         console.log(e);
     }
