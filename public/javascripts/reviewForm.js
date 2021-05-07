@@ -11,7 +11,6 @@ submitBtn.addEventListener("submit", async (e) => {
         "Content-Type": "application/json",
       },
     });
-    // console.log(res);
     if (!res.ok) {
       throw res;
     }

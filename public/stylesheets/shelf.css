@@ -1,0 +1,42 @@
+section {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+h1,
+h2 {
+    font-weight:bold;
+    text-align: center;
+}
+
+.comicCells {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+img {
+    width: 316px;
+    height: 475px;
+}
+
+.comicImage {
+    display: flex;
+    justify-content: center;
+}
+
+.infoText {
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+}
+
+.cellButtons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 2px 8px;
+}

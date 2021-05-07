@@ -1,13 +1,19 @@
 extends layout
 
-include shelf.pug 
+include shelf.pug
+include utils.pug
+    link(rel="stylesheet" href="/stylesheets/shelf.css")
+
 
 block content
     if(userShelves)
         div(class="user__shelves")
         h1 Your Shelves 
-            each shelf in userShelves
+        each shelf in userShelves
+            div(class='shelfInstance')
                 h2 Shelf: #{shelf.name}
-                    +shelf(shelf.id)
+                    each Comic in shelf.Comics
+                        +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id)
+
 
 //- div(class)

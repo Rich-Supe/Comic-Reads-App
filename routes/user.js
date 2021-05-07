@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const db = require('../db/models');
-const { Shelf, Comic, User} = db;
+const { Shelf, Comic, User, Library} = db;
 const { csrfProtection, asyncHandler } = require('./utils');
 const bcrypt = require('bcryptjs');
 
@@ -30,7 +30,21 @@ router.get('/user/register', csrfProtection, (req, res) => {
 router.get('/user/:id(\\d+)', async (req, res) => {
   const id = parseInt(req.params.id, 10);
   const userShelves = await Shelf.findAll({where:{userId: id}, include: Comic})
-  res.render('user-profile', {userShelves})
+  res.render('user-profile', {userShelves});
+})
+
+router.post('/user/:id(\\d+)', async (req, res) => {
+  const userId = res.locals.user.id;
+  const { shelfButtonId } = req.body;
+  // const targetShelf = await Shelf.findOne({where:{userId, shelfId: 6}})
+  
+  await Library.create({
+    shelfId : 6,
+    comicId: shelfButtonId
+});
+// const userShelves = await Shelf.findAll({where:{userId}, include: Comic});
+//   res.render('user-profile', {userShelves})
+  res.json({"key" : "comic added"});
 })
 
 router.post('/user/demo', asyncHandler(async (req, res) => {

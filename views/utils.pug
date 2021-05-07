@@ -13,16 +13,16 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text')
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
 mixin comicCard( imageUrl, title, author, genre, id )
-  div(class='comic__cards' id= id)
-    picture
-      img(src=imageUrl)
-    label= title
-    label= author 
-    label= genre
-    div
-      button(type='submit' id=`hasRead${id}`) Add to read
-    div(class='button' name='addToShelf')
-      button(type='submit' name= `button${id}`)
+  div(class='comicCells' id= id)
+    div(class='infoText')
+      label= title
+      label= author 
+      label= genre
+    div(class='comicImage')
+      a(href=`/comics/${id}`)
+        img(src=imageUrl)
+    div(class='cellButtons')
+      button(type='submit' name= `button${id}`) Remove From Shelf
     
 
 
