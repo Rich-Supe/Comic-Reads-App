@@ -5,7 +5,7 @@ block content
   link(rel="stylesheet" href="/stylesheets/comics.css")
   script(src="/javascripts/comics.js" type="module" defer)
   script(src="/javascripts/shelfButton.js" type="module" defer)
-
+  //- script(src="/javascripts/dropdown.js" type="module" defer)
   div(id='comicsGrid')
     each comic in comics
       div(class='comicsCells')
@@ -14,6 +14,24 @@ block content
         div(class="comic_img")
           a(href=`/comics/${comic.id}`)
             img(src=comic.coverUrl)
+
         div(class='cellButtons')
-          button(type='button' class='shelf_btn') Add To Shelf
-          button(type='button' class='btn_read' id=comic.id) Want To Read
+
+        button(type='button' class='shelf_btn') Add To Shelf
+        if status[comic.id]
+          if ((!status[comic.id].hasRead) && (status[comic.id].wantsToRead))
+            select(name='status' placeholder="status" id=comic.id class="dropdown")
+              option(value='' style="display: none") Select Status
+              option(value='Want To Read' selected id=`Want${comic.id}`) I want to read
+              option(value='Has Read' id=`Read${comic.id}`) I have read
+          if ((status[comic.id].hasRead) && (!status[comic.id].wantsToRead))
+            select(name='status' placeholder="status" id=comic.id class="dropdown")
+              option(value='' style="display: none") Select Status
+              option(value='Want To Read' id=`Want${comic.id}`) I want to read
+              option(value='Has Read' selected id=`Read${comic.id}`) I have read
+        else
+          select(name='status' placeholder="status" id=comic.id class="dropdown")
+            option(value='' style="display: none") Select Status
+            option(value='Want To Read' id=`Want${comic.id}`) I want to read
+            option(value='Has Read' id=`Read${comic.id}`) I have read
+
