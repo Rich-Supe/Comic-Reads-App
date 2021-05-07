@@ -18,6 +18,7 @@ module.exports = {
         {name: 'Recommended 3', userId: 1, isRecommended: true},
         {name: 'Recommended 4', userId: 1, isRecommended: true},
         {name: 'Recommended 5', userId: 1, isRecommended: true},
+        {name: 'My Shelf', userId: 1, isRecommended: false},
       ]);
   },
 

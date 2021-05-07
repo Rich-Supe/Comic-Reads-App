@@ -17,7 +17,6 @@ const comics = await Comic.findAll();
     statusABC.forEach(el =>{
         status[el.id]=el.dataValues
     })
-    console.log(status)
     res.render("comics", { comics, status })
 }));
 
@@ -31,7 +30,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     statusABC.forEach(el =>{
         status[el.id]=el.dataValues
     })
-    console.log(reviews)
     res.render('comic', { comic, reviews, status })
 }));
 
