@@ -17,7 +17,7 @@ const comics = await Comic.findAll();
     statusABC.forEach(el =>{
         status[el.id]=el.dataValues
     })
-    // console.log(status)
+
     res.render("comics", { comics, status })
 }));
 
@@ -31,7 +31,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     statusABC.forEach(el =>{
         status[el.id]=el.dataValues
     })
-    // console.log(reviews)
+
     res.render('comic', { comic, reviews, status })
 }));
 
@@ -64,5 +64,16 @@ router.patch('/', asyncHandler(async(req, res) => {
     await collection.update({ hasRead:hasRead, wantsToRead:wantsToRead });
     res.json({"patch":"success"});
 }));
+
+
+router.post(
+    "/:id(\\d+)/review",
+    asyncHandler(async (req, res) => {
+        const { commentArea } = req.body;
+        await Review.create({ review: commentArea, userId: res.locals.user.id, comicId: req.params.id });
+        res.redirect(`/comics/${req.params.id}`);
+    })
+);
+
 
 module.exports = router

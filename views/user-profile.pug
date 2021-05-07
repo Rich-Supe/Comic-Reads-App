@@ -1,8 +1,9 @@
 extends layout
 
 include shelf.pug
+include utils.pug
     link(rel="stylesheet" href="/stylesheets/shelf.css")
-
+    script(src="/javascripts/shelfButton.js" type="module" defer)
 
 block content
     if(userShelves)
@@ -10,7 +11,9 @@ block content
         h1 Your Shelves 
         each shelf in userShelves
             div(class='shelfInstance')
-                h2 Shelf: #{shelf.name}
-                    +shelf(shelf.id)
+                h2(id=shelf.name) Shelf: #{shelf.name}
+                    each Comic in shelf.Comics
+                        +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id)
+
 
 //- div(class)

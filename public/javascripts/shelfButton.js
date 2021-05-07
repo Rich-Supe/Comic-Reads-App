@@ -1,16 +1,52 @@
 
 
-const shelfButton = document.querySelector(".shelf_btn");
+const shelfButton = document.querySelectorAll(".shelf_btn");
 
+shelfButton.forEach(button => {
+    button.addEventListener("click", async (e) => {
+        // const userId = 1
+        const shelfButtonId = e.target.id
+        console.log('This comic was added to your shelf!');
+        const body = {shelfButtonId};
+    try {
+        const res = await fetch(`/user/1`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json",
+        }
+        });
 
-shelfButton.addEventListener("click", async (e) => {
-    // const currentComicId = comic.id
-    // if (!)
-    // const userId = ;
-    const shelfButtonId = event.target.id
-    console.log('This comic was added to your shelf!');
-    // await console.log(comic)
-    shelfButton.innerHTML = 'ID'
-
-
+        button.innerHTML = 'Added!'
+    } catch (e){
+        console.log(e);
+    }
+    })
 })
+
+
+const removeShelfButton = document.querySelectorAll(".remove-shelf_btn");
+
+removeShelfButton.forEach(button => {
+    button.addEventListener("click", async (e) => {
+        // const userId = 1
+        const removeShelfButtonId = e.target.id
+        console.log('This comic was removed from your shelf!');
+        const shelfName = button.parentNode.parentNode.parentNode.id
+        const body = {removeShelfButtonId, shelfName};
+    try {e
+        const res = await fetch(`/user/1`, {
+        method: 'DELETE',
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json",
+        }
+        });
+
+        button.innerHTML = 'Removed!'
+    } catch (e){
+        console.log(e);
+    }
+    })
+})
+

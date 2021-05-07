@@ -1,4 +1,5 @@
 
+
 mixin validationErrorSummary(errors)
   if errors
     div(class='alert alert-danger' role='alert')
@@ -19,10 +20,10 @@ mixin comicCard( imageUrl, title, author, genre, id )
       label= author 
       label= genre
     div(class='comicImage')
-      img(src=imageUrl)
+      a(href=`/comics/${id}`)
+        img(src=imageUrl)
     div(class='cellButtons')
-      button(type='submit' id=`hasRead${id}`) Add to read
-      button(type='submit' name= `button${id}`)
+      button(type='submit' class='remove-shelf_btn' name= `button${id}` id=id) Remove From Shelf
     
 
 
