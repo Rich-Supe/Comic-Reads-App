@@ -16,10 +16,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
-      comicId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Comics'}
-      },
       userId: {
         type: Sequelize.INTEGER,
         references: { model: 'Users'}

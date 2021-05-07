@@ -2,5 +2,6 @@ include utils.pug
 
 mixin shelf(shelfId)
     section(class="shelf")
-        each comic in comics
-            +comicCard( comic.comicUrl, comic.title, comic.author, comic.genre, comic.id)
+    h3 HELLO
+        each comic in shelves
+            +comicCard( comic.coverUrl, comic.title, comic.author, comic.genre, comic.id)
