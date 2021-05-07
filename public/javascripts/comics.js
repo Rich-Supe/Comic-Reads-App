@@ -1,5 +1,6 @@
 
 let btn = document.querySelectorAll(".dropdown");
+
 for(let i=0; i<btn.length; i++){
 
   /////////////////////////////////////////////////////////
@@ -11,6 +12,7 @@ for(let i=0; i<btn.length; i++){
     let hasRead;
     let wantToRead;
     //////////////////////////////////////////////////////////
+
     if (targetInfo==="Want To Read"){
       wantToRead = true
       hasRead = false
@@ -19,28 +21,22 @@ for(let i=0; i<btn.length; i++){
       wantToRead = false
       hasRead = true
     }
+    
 /////////////////////////////////////////////////////////////////
     const body = { targetInfo, bookId, hasRead, wantToRead  };
-      console.log(body)
     try {
       const res = await fetch("http://localhost:8080/comics", {
         method: 'POST',
         body: JSON.stringify(body),
-        headers: {"Content-Type": "application/json",}
+        headers: {
+          "Content-Type": "application/json",
+        }
       });
-      let ans = await res.json()
-
-      if(ans.post === "exists"){
-        const res = await fetch("http://localhost:8080/comics", {
-          method: 'PATCH',
-          body: JSON.stringify(body),
-          headers: {"Content-Type": "application/json",}
-        });
-      }
-    } catch (e){
-      console.log(e);
-    }
-  })
+      res.json();
+  }catch (e) {
+      console.error(e)
+  }
+});
 }
 
 // const fetch = async () => {

@@ -65,4 +65,25 @@ router.patch('/', asyncHandler(async(req, res) => {
     res.json({"patch":"success"});
 }));
 
+// router.get('/:id(\\d+)/review-form', asyncHandler(async(req, res) => {
+//     const id = parseInt(req.params.id, 10);
+//     console.log(id);
+//     const review = await Review.findByPk(id);
+//     // console.log(review);
+//     // res.send('hello');
+//     res.render('review-form', {review});
+//     // res.redirect(`/comics/review-form/${id}`);
+// }));
+
+
+//review post
+router.post(
+    "/:id(\\d+)/review",
+    asyncHandler(async (req, res) => {
+        const { commentArea } = req.body;
+        await Review.create({ review: commentArea, userId: res.locals.user.id, comicId: req.params.id });
+        res.redirect(`/comics/${req.params.id}`);
+    })
+);
+
 module.exports = router
