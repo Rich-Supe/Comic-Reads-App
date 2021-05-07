@@ -4,7 +4,7 @@ include utils.pug
 
 block content
     //- h3= "Edit Review"
-    form(action=`/comics/${}/edit/${}` method="post" class="edit-form")
+    form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/edit` method="post" class="edit-form")
             div
                 label Comment
                 textarea(name='editCommentArea', class='edit')

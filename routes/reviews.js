@@ -24,17 +24,33 @@ router.post(
 // }))
 
 
-//edit review
+// render edit-page
 router.post(
-    "/:id(\\d+)/edit/",
+    "/reviews/:id(\\d+)/edit/",
     asyncHandler(async (req, res) => {
-        let comicId = Comic.findOne({where:{comicId}})
-        const targetReview = Review.findByPk(editBtn.id);
-        const { commentArea } = req.body;
-        await targetReview.update({ review: commentArea, userId: res.locals.user.id, comicId: req.params.id });
-        res.render(`review-edit.pug`);
+        let comicId = req.params.id;
+        let reviewId = req.body.reviewId;
+        res.redirect(`/comics/${comicId}/reviews/${reviewId}/edit`);
     })
 );
+
+router.get('/comics/:comicId(\\d+)/reviews/:reviewId(\\d+)/edit', asyncHandler(async (req, res) => {
+    const targetReview = await Review.findByPk(req.params.reviewId);
+    res.render(`review-edit.pug`, {targetReview});
+}))
+
+// post edit
+router.post('/comics/:comicId(\\d+)/reviews/:reviewId(\\d+)/edit', asyncHandler(async (req, res) => {
+    let comicId = parseInt(req.params.comicId, 10);
+    let reviewId = parseInt(req.params.reviewId, 10);
+    const targetReview = await Review.findByPk(reviewId);
+
+    const {editCommentArea} = req.body;
+    console.log(req.body);
+    await targetReview.update({ review: editCommentArea, userId: res.locals.user.id, comicId: comicId});
+    res.redirect(`/comics/${comicId}`);
+}));
+
 
 
 //   router.put(

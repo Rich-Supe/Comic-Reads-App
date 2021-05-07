@@ -11,7 +11,10 @@ block content
         p= `Genre: ${comic.genre}`
         each review in reviews
             p= review.review
-            button(class=`editBtn` id=`${review.id}`) Edit
+            form(action=`/reviews/${comic.id}/edit/` method="post" class="edit-form")
+                div
+                    input(type='hidden' value=review.id name='reviewId')
+                button(type='submit' class='editReviewBtn') Edit
 
     h2 Review Form
 
