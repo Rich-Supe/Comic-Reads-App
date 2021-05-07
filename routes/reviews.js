@@ -53,31 +53,6 @@ router.post('/comics/:comicId(\\d+)/reviews/:reviewId(\\d+)/edit', asyncHandler(
 
 
 
-//   router.put(
-//     "/:id(\\d+)/edit/:id(\\d+)",
-//     asyncHandler(async (req, res, next) => {
-//       const review = await Review.findOne({
-//         where: {
-//           id: req.params.id,
-//         },
-//       });
-//       if (req.user.id !== review.userId) {
-//         const err = new Error("Unauthorized");
-//         err.status = 401;
-//         err.message = "You are not authorized to edit this review.";
-//         err.title = "Unauthorized";
-//         throw err;
-//       }
-//       if (review) {
-//         await review.update({ review: req.body.review });
-//         res.redirect(`/comics/${req.params.id}`);
-//       }
-//     // else {
-//     //     next(tweetNotFoundError(req.params.id));
-//     //   }
-//     })
-//   );
-
   //delete review
   router.delete(
     "/:id",
