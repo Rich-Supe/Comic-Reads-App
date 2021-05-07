@@ -1,5 +1,7 @@
 // window.addEventListener("load", (event)=>{
 let btn = document.querySelectorAll(".btn_read");
+let reviewBtn = document.querySelectorAll('.review_btn');
+
 for(let i=0; i<btn.length; i++){
   btn[i].addEventListener("click", async (event)=>{
     const targetInfo =event.target.className; //classList
@@ -8,40 +10,30 @@ for(let i=0; i<btn.length; i++){
     let wantToRead;
     //////////////////////////////////////////////////////////
     if (btn[i].innerText==="Want To Read"){
+      // console.log("Front End: I will Change HTML and change CSS")
       btn[i].innerText= "Has Read"
       wantToRead = true
       hasRead = false
     }
       else if (btn[i].innerText==="Has Read"){
-      btn[i].innerText = "Re-Read"
-      wantToRead = false
+      // console.log("Change to Another Button HTML and change CSS")
+      btn[i].innerText = "Want To Read"
       hasRead = true
+      wantToRead = false
       }
-        else if (btn[i].innerText==="Re-Read"){
-          btn[i].innerText = "Want To Read"
-          wantToRead = true
-          hasRead = true
-          }
 /////////////////////////////////////////////////////////////////
     const body = { targetInfo, bookId, hasRead, wantToRead  };
-      console.log(body)
     try {
       const res = await fetch("http://localhost:8080/comics", {
         method: 'POST',
         body: JSON.stringify(body),
-        headers: {"Content-Type": "application/json",}
+        headers: {
+          "Content-Type": "application/json",
+        }
       });
-      let ans = await res.json()
-
-      if(ans.post === "exists"){
-        const res = await fetch("http://localhost:8080/comics", {
-          method: 'PATCH',
-          body: JSON.stringify(body),
-          headers: {"Content-Type": "application/json",}
-        });
-      }
-    } catch (e){
-      console.log(e);
-    }
-  })
+      res.json();
+  }catch (e) {
+      console.error(e)
+  }
+});
 }

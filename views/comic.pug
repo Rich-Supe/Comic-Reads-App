@@ -10,3 +10,17 @@ block content
         p= `Genre: ${comic.genre}`
         each review in reviews
             p= review.review
+
+    h2 Review Form
+
+    .errors-container
+
+    form(action=`/comics/${comic.id}/review` method="post" class="create-form")
+        div
+            label Comment
+            textarea(name='commentArea', class='comment')
+        button(type='submit' class='submitReviewBtn') Submit Review
+
+    div(class="review-container")
+
+    script(type="module" src="/javascripts/reviewForm.js" defer)
