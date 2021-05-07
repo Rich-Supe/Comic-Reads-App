@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     Shelf.belongsToMany( models.Comic, columnMapping);
 
-    Shelf.belongsTo(models.User, { foreignKey: 'userId'})
+    Shelf.belongsTo(models.User, { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true})
   };
   return Shelf;
 };
