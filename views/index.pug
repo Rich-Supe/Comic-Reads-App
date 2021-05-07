@@ -9,5 +9,98 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 block content
   script(src="/javascripts/demoButton.js" type="module" defer)
-  button(type='button' class='demo_btn') Login As Demo User
-  img(src="/images/PageHeader_2000x800.jpg")
+
+
+  //- img(src="/images/PageHeader_2000x800.jpg")
+  .wrapper
+  .grid.grid__container
+    .grid__section.grid__section-1.flex-container-1
+      button(type='button' class='demo_btn') Login As Demo User
+
+    .grid__section.grid__section-2
+      .grid__item.grid__item-2-1 Know what you’re looking for?
+      .grid__item.grid__item-2-2
+        .form-group
+          label(for='searchTitle')
+          input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Comic Title Here')
+        select(name='Format' placeholder="Format" id=Genre class="dropdown")
+          option(value='' style="display: none") Any Format
+          option(value='Digital-Only') Digital Only
+          option(value='Print-Only') Print Only
+          option(value='Books-Only') Books Only
+        select(name='Genre' placeholder="Genre" id=Genre class="dropdown")
+          option(value='' style="display: none") Genre
+          option(value='Action-Adventure') Action-Adventure
+          option(value='Comedy') Comedy
+          option(value='Drama') Drama
+          option(value='Fantasy') Fantasy
+          option(value='Horror') Horror
+          option(value='Martial Arts') Martial Arts
+          option(value='Mystery') Mystery
+          option(value='Romance') Romance
+          option(value='Horror') Horror
+          option(value='Science Fiction') Science Fiction
+          option(value='Sports') Sports
+          option(value='Super Natural') Super Natural
+          option(value='Thriller') Thriller
+        button(type='button' class='search_btn') Search
+          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    .grid__section.grid__section-4 Carousel2
+
+    .grid__section.grid__section-5 Carousel3
+
+    .grid__section.grid__section-6 Carousel4
+
+    .grid__section.grid__section-7 Carousel5
+
+    .grid__section.grid__section-8
+      .grid__item.grid__item-8-1
+
+      .grid__item.grid__item-8-2
+        button(type='button' class='donate_btn')
+          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Donate Here!
+      .grid__item.grid__item-8-3
+        button(type='button' class='buy_btn')
+          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Buy Merchandise!
+    .grid__section.grid__section-9
+      .grid__item.grid__item-9-1
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Read"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Watch"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Marvel"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "DC"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Community"
+      .grid__item.grid__item-9-2
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "About Comic-Reads"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Jobs / Internships"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "FAQ"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Events"
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          li= "Copyrights"
+      .grid__item.grid__item-9-3
+        li= "© 2021 WhaleTail. Entertainment Inc."
+        li= "All rights reserved. Cause we cooler than you."
+        li= "Lead Coders: Rich Supe, Mike Sineath, Nathan Mount, and Stephen Choung"
+        li= 'The amazing code on this website and all related elements are © & TM WhaleTail.'
+
+      .grid__item.grid__item-9-4 Follow Us on Social Media!
+
+      .grid__item.grid__item-9-5
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          img(src="/images/iconfinder_1_Instagram_colored_svg_1_5296765.png" class="favicon" )
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          img(src="/images/iconfinder_1_Twitter3_colored_svg_5296516 (1).png" class="favicon")
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          img(src="/images/iconfinder_Colored_Facebook3_svg_5365678.png" class="favicon")
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          img(src="/images/iconfinder_1_Pinterest_colored_svg_5296503.png" class="favicon")
+        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+          img(src="/images/iconfinder_1_Whatsapp2_colored_svg_5296520.png" class="favicon")

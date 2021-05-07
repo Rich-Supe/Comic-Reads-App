@@ -19,16 +19,16 @@ block content
         if status[comic.id]
           if ((!status[comic.id].hasRead) && (status[comic.id].wantsToRead))
             select(name='status' placeholder="status" id=comic.id class="dropdown")
-              option(value='' style="display: none") Select Status
-              option(value='Want To Read' selected id=`Want${comic.id}`) I want to read
-              option(value='Has Read' id=`Read${comic.id}`) I have read
+              option(value='' style="display: none" class="dropdown-content") Select Status
+              option(value='Want To Read' selected id=`Want${comic.id}` class="dropdown-content") I want to read
+              option(value='Has Read' id=`Read${comic.id}` class="dropdown-content") I have read
           if ((status[comic.id].hasRead) && (!status[comic.id].wantsToRead))
             select(name='status' placeholder="status" id=comic.id class="dropdown")
-              option(value='' style="display: none") Select Status
-              option(value='Want To Read' id=`Want${comic.id}`) I want to read
-              option(value='Has Read' selected id=`Read${comic.id}`) I have read
+              option(value='' style="display: none" class="dropdown-content") Select Status
+              option(value='Want To Read' id=`Want${comic.id}` class="dropdown-content") I want to read
+              option(value='Has Read' selected id=`Read${comic.id}` class="dropdown-content") I have read
         else
           select(name='status' placeholder="status" id=comic.id class="dropdown")
-            option(value='' style="display: none") Select Status
-            option(value='Want To Read' id=`Want${comic.id}`) I want to read
-            option(value='Has Read' id=`Read${comic.id}`) I have read
+            option(value='' style="display: none" class="dropdown-content") Select Status
+            option(value='Want To Read' id=`Want${comic.id}` class="dropdown-content") I want to read
+            option(value='Has Read' id=`Read${comic.id}` class="dropdown-content") I have read
