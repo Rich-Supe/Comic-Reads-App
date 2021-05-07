@@ -124,7 +124,6 @@ router.post('/user/register', csrfProtection, userValidators,
   }));
 
 //LOGIN ROUTES
-
   router.get('/user/login', csrfProtection, (req, res) => {
     if (res.locals.authenticated) {
       res.redirect('/')
@@ -189,9 +188,5 @@ router.post('/user/register', csrfProtection, userValidators,
     logoutUser(req, res);
     res.redirect('/user/login');
   });
-
-
-
-
 
 module.exports = router;

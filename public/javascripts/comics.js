@@ -1,14 +1,14 @@
 let btn = document.querySelectorAll(".dropdown");
 for(let i=0; i<btn.length; i++){
-  /////////////////////////////////////////////////////////
+  
   btn[i].addEventListener("click", async (event)=>{
-    const targetInfo =event.target.value; //classList
-    const bookId =event.target.id; // book id
+    const targetInfo =event.target.value;
+    const bookId =event.target.id;
     console.log(targetInfo)
     console.log(bookId)
     let hasRead;
     let wantsToRead;
-    //////////////////////////////////////////////////////////
+
     if (targetInfo==="Want To Read"){
       wantsToRead = true
       hasRead = false
@@ -17,7 +17,7 @@ for(let i=0; i<btn.length; i++){
       wantsToRead = false
       hasRead = true
     }
-    ////////////////////////////////////////////////////////////
+
     const body = { targetInfo, bookId, hasRead, wantsToRead  };
     try {
       const res = await fetch("http://localhost:8080/comics", {

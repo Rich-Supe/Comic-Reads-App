@@ -25,8 +25,14 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const id = parseInt(req.params.id, 10);
     const comic = await Comic.findByPk(id);
     const reviews = await Review.findAll( {where: {comicId: id}})
+    let currUser = req.session.auth.userId
+    const statusABC = await Collection.findAll({where:{userId:currUser}});
+    let status = {}
+    statusABC.forEach(el =>{
+        status[el.id]=el.dataValues
+    })
     console.log(reviews)
-    res.render('comic', { comic, reviews })
+    res.render('comic', { comic, reviews, status })
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
@@ -59,9 +65,6 @@ router.patch('/', asyncHandler(async(req, res) => {
     res.json({"patch":"success"});
 }));
 
-
-
-//review post
 router.post(
     "/:id(\\d+)/review",
     asyncHandler(async (req, res) => {
@@ -70,5 +73,4 @@ router.post(
         res.redirect(`/comics/${req.params.id}`);
     })
 );
-
 module.exports = router
