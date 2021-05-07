@@ -28,15 +28,9 @@ router.get('/user/register', csrfProtection, (req, res) => {
 });
 
 router.get('/user/:id(\\d+)', async (req, res) => {
-  // let currUserId = req.session.auth.userId
   const id = parseInt(req.params.id, 10);
-  //FIX THIS QUERY >:(
-  const shelves = await Shelf.findAll({include: Comic});
   const userShelves = await Shelf.findAll({where:{userId: id}, include: Comic})
-  // console.log(shelves)
-  // console.log(comics)
-  // console.log(userShelves)
-  res.render('user-profile', { shelves, userShelves})
+  res.render('user-profile', {userShelves})
 })
 
 router.post('/user/demo', asyncHandler(async (req, res) => {
