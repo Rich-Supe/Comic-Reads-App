@@ -11,6 +11,7 @@ block content
         p= `Genre: ${comic.genre}`
         each review in reviews
             p= review.review
+            button(class=`editBtn` id=`${review.id}`) Edit
 
     h2 Review Form
 
@@ -19,7 +20,7 @@ block content
     form(action=`/comics/${comic.id}/review` method="post" class="create-form")
         div
             label Comment
-            textarea(name='commentArea', class='comment')
+            textarea(name='commentArea' class='comment')
         button(type='submit' class='submitReviewBtn') Submit Review
 
     div(class="review-container")
