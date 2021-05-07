@@ -19,7 +19,8 @@ mixin comicCard( imageUrl, title, author, genre, id )
       label= author 
       label= genre
     div(class='comicImage')
-      img(src=imageUrl)
+      a(href=`/comics/${id}`)
+        img(src=imageUrl)
     div(class='cellButtons')
       button(type='submit' name= `button${id}`) Remove From Shelf
     
