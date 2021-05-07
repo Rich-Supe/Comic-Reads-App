@@ -11,18 +11,12 @@ router.use(requireAuth)
 
 router.get('/', asyncHandler(async(req, res) => {
 const comics = await Comic.findAll();
-
     let currUser = req.session.auth.userId
     const statusABC = await Collection.findAll({where:{userId:currUser}});
-
-    // console.log(status[0].hasRead)
-    // console.log(status[0].wantsToRead)
-    // console.log(status[0].comicId)
     let status = {}
     statusABC.forEach(el =>{
         status[el.id]=el.dataValues
     })
-    // status = JSON.stringify(status)
     console.log(status)
     res.render("comics", { comics, status })
 }));
@@ -36,44 +30,35 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 }));
 
 //Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
-router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
-    const comicId = parseInt(req.params.id, 10);
-    //gotta find model root for the "want to read"
-    let currUser = req.session.auth.userId
-    const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
-    await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
-    res.json({"post":"success"});
-}));
+// router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
+//     const comicId = parseInt(req.params.id, 10);
+//     //gotta find model root for the "want to read"
+//     let currUser = req.session.auth.userId
+//     const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
+//     await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
+//     res.json({"post":"success"});
+// }));
 
 router.post('/', asyncHandler(async(req, res) => {
     let currUser = req.session.auth.userId
-    const { bookId, hasRead, wantToRead }  = req.body //targetInfo,
+    const { bookId, hasRead, wantsToRead }  = req.body
     const collection = await Collection.findOne({where:{comicId:bookId,userId:currUser}});
     if(collection === null){
-        await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:bookId, userId:currUser });
-        res.json({"post":"success"}); // some issue here
+        await Collection.create({ hasRead:hasRead, wantsToRead:wantsToRead, comicId:bookId, userId:currUser });
+        res.json({"post":"success"});
     } else {
-        res.json({"post":"exists"});  //some issue here
+        res.json({"post":"exists"});
     }
 }));
 
 router.patch('/', asyncHandler(async(req, res) => {
     let currUser = req.session.auth.userId
-    const { bookId, hasRead, wantToRead }  = req.body
+    const { bookId, hasRead, wantsToRead }  = req.body
     const collection = await Collection.findOne({where:{comicId:bookId,userId:currUser}});
-    await collection.update({ hasRead:hasRead, wantsToRead:wantToRead });
+    await collection.update({ hasRead:hasRead, wantsToRead:wantsToRead });
     res.json({"patch":"success"});
 }));
 
-// router.get('/:id(\\d+)/review-form', asyncHandler(async(req, res) => {
-//     const id = parseInt(req.params.id, 10);
-//     console.log(id);
-//     const review = await Review.findByPk(id);
-//     // console.log(review);
-//     // res.send('hello');
-//     res.render('review-form', {review});
-//     // res.redirect(`/comics/review-form/${id}`);
-// }));
 
 
 //review post
