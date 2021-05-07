@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    script(src="/javascripts/comics.js" type="module" defer)
     link(rel="stylesheet" href="/stylesheets/comic.css")
     div(id="catalogueInfo")
         //- div(id="coverImage")
@@ -24,3 +25,19 @@ block content
     div(class="review-container")
 
     script(type="module" src="/javascripts/reviewForm.js" defer)
+    if status[comic.id]
+        if ((!status[comic.id].hasRead) && (status[comic.id].wantsToRead))
+            select(name='status' placeholder="status" id=comic.id class="dropdown")
+                option(value='' style="display: none") Select Status
+                option(value='Want To Read' selected id=`Want${comic.id}`) I want to read
+                option(value='Has Read' id=`Read${comic.id}`) I have read
+        if ((status[comic.id].hasRead) && (!status[comic.id].wantsToRead))
+            select(name='status' placeholder="status" id=comic.id class="dropdown")
+                option(value='' style="display: none") Select Status
+                option(value='Want To Read' id=`Want${comic.id}`) I want to read
+                option(value='Has Read' selected id=`Read${comic.id}`) I have read
+    else
+        select(name='status' placeholder="status" id=comic.id class="dropdown")
+            option(value='' style="display: none") Select Status
+            option(value='Want To Read' id=`Want${comic.id}`) I want to read
+            option(value='Has Read' id=`Read${comic.id}`) I have read

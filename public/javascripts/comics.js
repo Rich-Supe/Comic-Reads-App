@@ -1,29 +1,24 @@
-
 let btn = document.querySelectorAll(".dropdown");
-
 for(let i=0; i<btn.length; i++){
-
-  /////////////////////////////////////////////////////////
+  
   btn[i].addEventListener("click", async (event)=>{
-    const targetInfo =event.target.value; //classList
-    const bookId =event.target.id; // book id
+    const targetInfo =event.target.value;
+    const bookId =event.target.id;
     console.log(targetInfo)
     console.log(bookId)
     let hasRead;
-    let wantToRead;
-    //////////////////////////////////////////////////////////
+    let wantsToRead;
 
     if (targetInfo==="Want To Read"){
-      wantToRead = true
+      wantsToRead = true
       hasRead = false
     }
     else if (targetInfo==="Has Read"){
-      wantToRead = false
+      wantsToRead = false
       hasRead = true
     }
-    
-/////////////////////////////////////////////////////////////////
-    const body = { targetInfo, bookId, hasRead, wantToRead  };
+
+    const body = { targetInfo, bookId, hasRead, wantsToRead  };
     try {
       const res = await fetch("http://localhost:8080/comics", {
         method: 'POST',
@@ -32,10 +27,10 @@ for(let i=0; i<btn.length; i++){
           "Content-Type": "application/json",
         }
       });
-      
       let ans = await res.json()
-
+      console.log(ans.post)
       if(ans.post === "exists"){
+        console.log(body)
         const res = await fetch("http://localhost:8080/comics", {
           method: 'PATCH',
           body: JSON.stringify(body),
@@ -47,16 +42,3 @@ for(let i=0; i<btn.length; i++){
     }
   })
 }
-
-// const fetch = async () => {
-//   const res = await fetch("http://localhost:8080/comics", {
-//     headers: {
-//       method: "POST",
-//       headers: {"Content-Type": "application/json",}
-//     },
-//     let ans = await res.json()
-//   });
-
-// function selectElement(id, valueToSelect) {
-//   let element = document.getElementById(id);
-//   element.value = valueToSelect;
