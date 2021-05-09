@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/delete` method='post' class="delete-form")
+        div
+            label Delete?
+        button(class='deleteReviewBtn' type='submit') Delete Review
