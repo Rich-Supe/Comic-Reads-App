@@ -1,3 +1,7 @@
+body:not(a){
+    font-family: fantasy;
+}
+
 section {
     display: flex;
     flex-direction: row;
@@ -14,11 +18,12 @@ h2 {
     display: flex;
     flex-direction: column;
     margin: 8px;
+    margin-top: 0px;
 }
 
 img {
-    width: 316px;
-    height: 475px;
+    width: 221px !important;
+    height: 333px !important;
 }
 
 .comicImage {
@@ -37,6 +42,56 @@ img {
     justify-content: center;
 }
 
-button {
+button:not(.logout) {
     margin: 2px 8px;
+    display: inline-block;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    /* background-color: rgb(250, 201, 238); */
+    color:black;
+    font-family: fantasy;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:not(.logout):hover {
+    background-color: crimson;
+}
+
+#Super-Hero, #Horror, #My-Personal-Shelf {
+    width: 98%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    /* padding-bottom: 10px; */
+}
+
+.infoText {
+    height: 75px;
+    display: flex;
+    /* background-color: black; */
+}
+
+.h2_text {
+    margin-top: 20px;
+    /* padding-top: 10px;
+    padding-bottom: 5px; */
+    font-size: 26px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2:not(.h2_text) {
+    margin-bottom: 10px;
+}
+
+h1 {
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 35px;
+    /* color: whitesmoke; */
+}
+
+.comic-title {
+    font-size: larger;
 }
