@@ -36,7 +36,7 @@ router.get('/user/:id(\\d+)', asyncHandler(async (req, res) => {
 router.post('/user/:id(\\d+)', asyncHandler( async (req, res) => {
   const {shelfButtonId}  = req.body;
   await Library.create({
-    shelfId : 6,
+    shelfId : 3,
     comicId: shelfButtonId
 });
   res.json({"key" : "comic added"});

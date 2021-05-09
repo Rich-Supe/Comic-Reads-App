@@ -1,5 +1,6 @@
 body {
     background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
+    /* background-color:rgb(155, 141, 141); */
 }
 
 nav {
@@ -8,6 +9,7 @@ nav {
     justify-content: space-between;
     /* padding: 10px; */
     background-color: skyblue;
+    background: transparent;
 }
 
 a {

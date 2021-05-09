@@ -13,12 +13,9 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Shelves', [
-        {name: 'Recommended 1', userId: 1, isRecommended: true},
-        {name: 'Recommended 2', userId: 1, isRecommended: true},
-        {name: 'Recommended 3', userId: 1, isRecommended: true},
-        {name: 'Recommended 4', userId: 1, isRecommended: true},
-        {name: 'Recommended 5', userId: 1, isRecommended: true},
-        {name: 'My Shelf', userId: 1, isRecommended: false},
+        {name: 'Super-Hero', userId: 1, isRecommended: true},
+        {name: 'Horror', userId: 1, isRecommended: true},
+        {name: 'My-Personal-Shelf', userId: 1, isRecommended: false},
       ]);
   },
 
