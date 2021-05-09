@@ -68,7 +68,7 @@ button:not(.logout):hover {
 }
 
 .infoText {
-    height: 75px;
+    height: 85px;
     display: flex;
     /* background-color: black; */
 }
@@ -87,12 +87,24 @@ h2:not(.h2_text) {
 
 h1 {
     
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 35px;
+    border: black;
+    border-style: hidden hidden dotted hidden;
+    /* border-bottom: black; */
+    /* border-style: dotted; */
+
     /* color: whitesmoke; */
 }
 
 .comic-title {
     font-size: larger;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    margin-top: 10px;
 }
 
