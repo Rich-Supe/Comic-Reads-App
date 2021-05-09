@@ -18,3 +18,6 @@ For more info on:
 * Front-end Routes
 * Back-end Routes
 * Feature/MVP list
+* User Stories
+
+and more, please visit our Wiki pages here: https://github.com/Rich-Supe/Comic-Reads-App/wiki
