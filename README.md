@@ -1,6 +1,20 @@
-# Express Project Skeleton
+Welcome to the ReadMe for Comic-Reads!
 
-Use this project skeleton as a starting point for structuring your app. Things to note
-* Sequelize configuration has not yet been added -- you will need to set that up yourself
-* You may find yourself wanting to use javascript -- js files can be added in `public/javascripts` and should be appended to the Pug templates as needed
-* CSS files can go in `public/stylesheets` and also will need to be added to Pug templates
+Here is a link to our live site:
+https://comic-reads.herokuapp.com/
+
+Comic-Reads is a comic book application for browsing and storing comics that you like! Use our app to create shelves of comics, read/write reviews and much more!
+
+This application uses pug, and expressJs for the front-end and Javascript, postgres/sequelize for the back-end. We use RESTful API convention throughout our project as well as adding CRUD operations to our features.
+
+Database Schema: https://dbdiagram.io/d/60889e79b29a09603d126ea0
+
+To Do: 
+* Update front-end interface
+* Add friends list and community forum
+* Re-work forms and styling
+
+For more info on:
+* Front-end Routes
+* Back-end Routes
+* Feature/MVP list
