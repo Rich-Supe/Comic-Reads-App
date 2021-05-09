@@ -21,6 +21,13 @@ const comics = await Comic.findAll();
     res.render("comics", { comics, status })
 }));
 
+router.post('/search', (req, res, next) => {
+    const {selectedGenre} = req.body;
+    console.log(selectedGenre)
+    const results = Comic.findAll({where: {genre: selectedGenre}});
+    res.render('results', {results});
+  });
+
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const id = parseInt(req.params.id, 10);
     const comic = await Comic.findByPk(id);
