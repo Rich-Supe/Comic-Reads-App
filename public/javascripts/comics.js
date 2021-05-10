@@ -13,7 +13,7 @@ for(let i=0; i<btn.length; i++){
       hasRead = false
     }
     else if (targetInfo==="Has Read"){
-      wantsToRead = false
+      wantsToRead = falsegit
       hasRead = true
     }
 
