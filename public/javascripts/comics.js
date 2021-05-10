@@ -2,7 +2,7 @@ let btn = document.querySelectorAll(".dropdown");
 let editBtn = document.querySelectorAll('.editBtn');
 for(let i=0; i<btn.length; i++){
 
-  btn[i].addEventListener("change", async (event)=>{
+  btn[i].addEventListener("change", async (event)=>{ // click
     const targetInfo =event.target.value;
     const bookId =event.target.id;
     let hasRead;
