@@ -141,7 +141,10 @@ a {
     grid-area: header /* Fill this in. */;
     height: 770px;
     background-image: url("/images/PageHeader_2000x800.jpg");
-    background-size: 100vw;
+    background-repeat: fill;
+    background-repeat: no-repeat;
+    background-size: 100vw 770px
+
   }
 
   .grid__section-2 {
