@@ -48,7 +48,6 @@ router.post('/comics/:comicId(\\d+)/reviews/:reviewId(\\d+)/edit', asyncHandler(
     const targetReview = await Review.findByPk(reviewId);
 
     const {editCommentArea} = req.body;
-    console.log(req.body);
     await targetReview.update({ review: editCommentArea, userId: res.locals.user.id, comicId: comicId});
     res.redirect(`/comics/${comicId}`);
 }));

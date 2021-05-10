@@ -23,7 +23,6 @@ const comics = await Comic.findAll();
 
 router.post('/search', (req, res, next) => {
     const {selectedGenre} = req.body;
-    console.log(selectedGenre)
     const results = Comic.findAll({where: {genre: selectedGenre}});
     res.render('results', {results});
   });

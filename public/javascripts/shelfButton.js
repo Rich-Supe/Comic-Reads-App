@@ -5,9 +5,7 @@ shelfButton.forEach(button => {
     button.addEventListener("click", async (e) => {
         // const userId = 1
         const shelfButtonId = e.target.id
-        console.log('This comic was added to your shelf!');
         const body = {shelfButtonId};
-        console.log('=======', body)
     try {
         const res = await fetch(`/user/1`, {
         method: 'POST',
@@ -31,7 +29,6 @@ removeShelfButton.forEach(button => {
     button.addEventListener("click", async (e) => {
         // const userId = 1
         const removeShelfButtonId = e.target.id
-        console.log('This comic was removed from your shelf!');
         const shelfName = button.parentNode.parentNode.parentNode.id
         const body = {removeShelfButtonId, shelfName};
     try {e

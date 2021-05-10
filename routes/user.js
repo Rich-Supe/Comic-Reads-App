@@ -130,6 +130,15 @@ router.post('/user/register', csrfProtection, userValidators,
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
       await user.save();
+      const userId = user.id
+      const shelf = db.Shelf.build({
+        name: 'My-shelf',
+        userId: userId,
+        isRecommended: false
+      });
+      await shelf.save();
+
+
       loginUser(req, res, user);
       res.redirect('/');
     } else {

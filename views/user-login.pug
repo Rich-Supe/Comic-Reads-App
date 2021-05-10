@@ -5,6 +5,7 @@ include utils.pug
 
 block content
   script(src="/javascripts/demoButton.js" type="module" defer)
+  link(rel="stylesheet" href="/stylesheets/login.css")
   +validationErrorSummary(errors)
   form(action='/user/login' method='post')
     input(type='hidden' name='_csrf' value=csrfToken)
