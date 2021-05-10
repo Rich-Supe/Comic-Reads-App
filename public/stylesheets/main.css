@@ -22,6 +22,10 @@ a, .navbar-text {
     text-transform: uppercase;
 }
 
+.logout:hover {
+    background-color: crimson;
+}
+
 span {
     font-size: 20px;
 }
