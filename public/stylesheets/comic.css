@@ -1,4 +1,17 @@
 img {
-    width: 316px;
-    height: 475px;
+    /* margin-top: 3rem; */
+    /* width: 316px;
+    height: 475px; */
+    width: 25%;
+    height: 37.5%;
 }
+
+/* p {
+    font-size: larger;
+} */
+
+/* #catalogueInfo {
+    display: flex;
+    justify-content: column;
+    height: 70%;
+} */

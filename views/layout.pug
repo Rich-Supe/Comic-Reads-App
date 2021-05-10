@@ -9,7 +9,7 @@ html
     header
       nav
         if locals.authenticated
-          span(class='navbar-text px-4') Welcome #{user.firstName}!
+          span(class='navbar-text') Welcome #{user.firstName}!
           a(href='/') Home
           a(href=`/user/${user.id}`) Profile
           a(href='/comics') Comics
@@ -18,8 +18,8 @@ html
             form(class='form-inline pr-4' action='/user/logout' method='post')
               button(class='logout' type='submit') Logout
         else
-          span(class='navbar-text px-4')
-            a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
-            a(class='btn btn-sm btn-dark' href='/user/register') Register
+          span(class='navbar-text')
+          a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
+          a(class='btn btn-sm btn-dark' href='/user/register') Register
             
     block content

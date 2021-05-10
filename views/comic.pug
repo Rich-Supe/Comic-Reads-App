@@ -5,8 +5,8 @@ block content
     link(rel="stylesheet" href="/stylesheets/comic.css")
     div(id="catalogueInfo")
         //- div(id="coverImage")
-        img(src= comic.coverUrl)
         p= comic.title
+        img(src= comic.coverUrl)
         p= `Written by: ${comic.author}`
         p= `Genre: ${comic.genre}`
         each review in reviews

@@ -6,14 +6,20 @@ body {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     /* padding: 10px; */
     background-color: skyblue;
     background: transparent;
 }
 
-a {
+a, .navbar-text {
     font-size: 20px;
+    font-family: fantasy;
+}
+
+.logout {
+    font-family: fantasy;
+    text-transform: uppercase;
 }
 
 span {
