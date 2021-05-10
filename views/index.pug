@@ -30,15 +30,15 @@ block content
         div(style="visibility: hidden" id='secondDropdown')
           select(style="visibility: hidden" name='Title' placeholder="Title" id="title" class="dropdown")
             option(value='' style="display: none") Title
-            each title in titles 
+            each title in titles
               option(value= title)= title
           select(style="visibility: hidden" name='Author' placeholder="Author" id="author" class="dropdown")
             option(value='' style="display: none") Author
-            each author in authors 
+            each author in authors
              option(value= author)= author
           select(style="visibility: hidden" name='Genre' placeholder="Genre" id="genre" class="dropdown")
             option(value='' style="display: none") Genre
-            each genre in genres 
+            each genre in genres
               option(value= genre)= genre
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
