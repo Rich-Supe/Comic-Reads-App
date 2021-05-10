@@ -34,15 +34,11 @@ router.get('/user/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 router.post('/user/:id(\\d+)', asyncHandler( async (req, res) => {
-  const userId = res.locals.user.id;
-  const { shelfButtonId } = req.body;
-  // const targetShelf = await Shelf.findOne({where:{userId, shelfId: 6}})
+  const {shelfButtonId}  = req.body;
   await Library.create({
-    shelfId : 6,
+    shelfId : 3,
     comicId: shelfButtonId
 });
-// const userShelves = await Shelf.findAll({where:{userId}, include: Comic});
-//   res.render('user-profile', {userShelves})
   res.json({"key" : "comic added"});
 }));
 
@@ -134,6 +130,15 @@ router.post('/user/register', csrfProtection, userValidators,
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
       await user.save();
+      const userId = user.id
+      const shelf = db.Shelf.build({
+        name: 'My-shelf',
+        userId: userId,
+        isRecommended: false
+      });
+      await shelf.save();
+
+
       loginUser(req, res, user);
       res.redirect('/');
     } else {

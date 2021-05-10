@@ -1,12 +1,10 @@
 
-
 const shelfButton = document.querySelectorAll(".shelf_btn");
 
 shelfButton.forEach(button => {
     button.addEventListener("click", async (e) => {
         // const userId = 1
         const shelfButtonId = e.target.id
-        console.log('This comic was added to your shelf!');
         const body = {shelfButtonId};
     try {
         const res = await fetch(`/user/1`, {
@@ -31,7 +29,6 @@ removeShelfButton.forEach(button => {
     button.addEventListener("click", async (e) => {
         // const userId = 1
         const removeShelfButtonId = e.target.id
-        console.log('This comic was removed from your shelf!');
         const shelfName = button.parentNode.parentNode.parentNode.id
         const body = {removeShelfButtonId, shelfName};
     try {e
@@ -42,8 +39,9 @@ removeShelfButton.forEach(button => {
             "Content-Type": "application/json",
         }
         });
-
         button.innerHTML = 'Removed!'
+        // Location.reload();
+        window.location.href = '/user/1'
     } catch (e){
         console.log(e);
     }

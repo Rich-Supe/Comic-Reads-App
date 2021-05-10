@@ -23,36 +23,12 @@ block content
         .form-group
           label(for='searchTitle')
           input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Comic Title Here')
-        select(name='Format' placeholder="Format" id=Genre class="dropdown")
-          option(value='' style="display: none") Any Format
-          option(value='Digital-Only') Digital Only
-          option(value='Print-Only') Print Only
-          option(value='Books-Only') Books Only
-        select(name='Genre' placeholder="Genre" id=Genre class="dropdown")
+        select(name='Genre' placeholder="Genre" class="dropdown")
           option(value='' style="display: none") Genre
-          option(value='Action-Adventure') Action-Adventure
-          option(value='Comedy') Comedy
-          option(value='Drama') Drama
-          option(value='Fantasy') Fantasy
-          option(value='Horror') Horror
-          option(value='Martial Arts') Martial Arts
-          option(value='Mystery') Mystery
-          option(value='Romance') Romance
-          option(value='Horror') Horror
-          option(value='Science Fiction') Science Fiction
-          option(value='Sports') Sports
-          option(value='Super Natural') Super Natural
-          option(value='Thriller') Thriller
+          each genre in genres 
+            option(value= genre)= genre
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-    .grid__section.grid__section-4 Carousel2
-
-    .grid__section.grid__section-5 Carousel3
-
-    .grid__section.grid__section-6 Carousel4
-
-    .grid__section.grid__section-7 Carousel5
-
     .grid__section.grid__section-8
       .grid__item.grid__item-8-1
 
