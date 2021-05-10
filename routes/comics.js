@@ -6,6 +6,9 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { requireAuth } = require('../auth');
 const { Comic, User, Review, Collection} = db;
 const { check, validationResult } = require('express-validator');
+const Sequelize = require('sequelize')
+const { Op } = require('sequelize');
+
 
 router.use(requireAuth)
 
@@ -37,7 +40,7 @@ router.get('/search/:searchCriteria/:selectedChoice', async (req, res, next) => 
             results = await Comic.findAll({where: {genre: selectedChoice}});
             break;
         case 'keyword':
-            results = await Comic.findAll({where: {title: { $iLike: selectedChoice}}});
+            results = await Comic.findAll({where: {title: { [Op.iLike]: `%${selectedChoice}%`}}});
             break;
     }
     console.log(`*************************************${results}`)
