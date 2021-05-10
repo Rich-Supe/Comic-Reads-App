@@ -1,5 +1,5 @@
-extends layout 
-
-block content 
-
-    
+extends layout.pug
+include utils.pug 
+block content
+    each result in results 
+        +comicCard( result.coverUrl, result.title, result.author, result.genre, result.id)

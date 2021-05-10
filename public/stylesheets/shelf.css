@@ -54,7 +54,7 @@ button:not(.logout) {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-button:not(.logout):hover {
+button:hover {
     background-color: crimson;
 }
 
@@ -90,11 +90,8 @@ h1 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 35px;
     border: black;
-    border-style: hidden hidden dotted hidden;
-    /* border-bottom: black; */
-    /* border-style: dotted; */
-
-    /* color: whitesmoke; */
+    /* border-style: hidden hidden thin hidden; */
+   
 }
 
 .comic-title {
@@ -105,6 +102,6 @@ h3 {
     display: flex;
     justify-content: center;
     font-size: x-large;
-    margin-top: 10px;
+    margin-top: 23px;   
 }
 

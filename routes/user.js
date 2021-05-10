@@ -33,7 +33,7 @@ router.get('/user/:id(\\d+)', asyncHandler(async (req, res) => {
   res.render('user-profile', {userShelves});
 }));
 
-router.post('/user/:id(\\d+)', asyncHandler( async (req, res) => {
+router.post('/user/:id(\\d+)', requireAuth, asyncHandler( async (req, res) => {
   const {shelfButtonId}  = req.body;
   await Library.create({
     shelfId : 3,
@@ -42,7 +42,7 @@ router.post('/user/:id(\\d+)', asyncHandler( async (req, res) => {
   res.json({"key" : "comic added"});
 }));
 
-router.delete('/user/:id(\\d+)', asyncHandler(async (req, res) => {
+router.delete('/user/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
   //grabbing the comic ID by the removeShelfButton id
   const removeShelfButtonId = req.body.removeShelfButtonId
   const name = req.body.shelfName
