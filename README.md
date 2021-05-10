@@ -15,9 +15,9 @@ To Do:
 * Re-work forms and styling
 
 For more info on:
-* Front-end Routes: https://github.com/Rich-Supe/Comic-Reads-App/wiki/API-Routes
-* Back-end Routes
-* Feature/MVP list
+* Front-end Routes: https://github.com/Rich-Supe/Comic-Reads-App/wiki/Frontend-Routes
+* Back-end Routes: https://github.com/Rich-Supe/Comic-Reads-App/wiki/API-Routes
+* Feature/MVP list 
 * User Stories
 
 and more, please visit our Wiki pages here: https://github.com/Rich-Supe/Comic-Reads-App/wiki
