@@ -41,6 +41,10 @@ router.get('/search/:searchCriteria/:selectedChoice', async (req, res, next) => 
             break;
         case 'keyword':
             results = await Comic.findAll({where: {title: { [Op.iLike]: `%${selectedChoice}%`}}});
+            let results2 = await Comic.findAll({where: {author: { [Op.iLike]: `%${selectedChoice}%`}}});
+            let results3 = await Comic.findAll({where: {genre: { [Op.iLike]: `%${selectedChoice}%`}}});
+            results2.forEach(result => results.push(result));
+            results3.forEach(result => results.push(result));
             break;
     }
     console.log(`*************************************${results}`)
