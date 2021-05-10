@@ -20,12 +20,26 @@ block content
       .grid__item.grid__item-2-1 Know what you’re looking for?
       .grid__item.grid__item-2-2
         .form-group
-          label(for='searchTitle')
-          input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Comic Title Here')
-        select(name='Genre' placeholder="Genre" class="dropdown")
-          option(value='' style="display: none") Genre
-          each genre in genres 
-            option(value= genre)= genre
+        select(name="criteria" placeholder="criteria" id="criteria" class="dropdown")
+          option(value='' style="display: none") Search By
+          option(value='title') Title
+          option(value='author') Author
+          option(value='genre') Genre
+          option(value='keyword') Keyword
+        input#searchTitle.form-control(style="visibility: hidden" type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
+        div(style="visibility: hidden" id='secondDropdown')
+          select(style="visibility: hidden" name='Title' placeholder="Title" id="title" class="dropdown")
+            option(value='' style="display: none") Title
+            each title in titles 
+              option(value= title)= title
+          select(style="visibility: hidden" name='Author' placeholder="Author" id="author" class="dropdown")
+            option(value='' style="display: none") Author
+            each author in authors 
+             option(value= author)= author
+          select(style="visibility: hidden" name='Genre' placeholder="Genre" id="genre" class="dropdown")
+            option(value='' style="display: none") Genre
+            each genre in genres 
+              option(value= genre)= genre
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
     .grid__section.grid__section-8

@@ -21,9 +21,25 @@ const comics = await Comic.findAll();
     res.render("comics", { comics, status })
 }));
 
-router.get('/search/:selectedGenre', async (req, res, next) => {
-    const selectedGenre = req.params.selectedGenre;
-    const results = await Comic.findAll({where: {genre: selectedGenre}});
+router.get('/search/:searchCriteria/:selectedChoice', async (req, res, next) => {
+    const searchCriteria = req.params.searchCriteria;
+    const selectedChoice = req.params.selectedChoice;
+    let results;
+    
+    switch (searchCriteria) {
+        case 'title':
+            results = await Comic.findAll({where: {title: selectedChoice}});
+            break;
+        case 'author':
+            results = await Comic.findAll({where: {author: selectedChoice}});
+            break;
+        case 'genre':
+            results = await Comic.findAll({where: {genre: selectedChoice}});
+            break;
+        case 'keyword':
+            results = await Comic.findAll({where: {title: { $iLike: selectedChoice}}});
+            break;
+    }
     console.log(`*************************************${results}`)
     res.render('results', {results});
   });
