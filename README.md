@@ -19,4 +19,4 @@ For more info on:
 * Back-end Routes: https://github.com/Rich-Supe/Comic-Reads-App/wiki/API-Routes
 * Feature/MVP list: https://github.com/Rich-Supe/Comic-Reads-App/wiki
 * User Stories: https://github.com/Rich-Supe/Comic-Reads-App/wiki/User-Stories
-
+*
