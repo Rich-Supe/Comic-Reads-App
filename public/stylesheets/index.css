@@ -415,14 +415,9 @@ a {
 
   /* Grid Section 9 Footer Styles */
   .grid__section-9 {
-    height: 100px;
+    /* height: 100px; */
     grid-area: footer;
-    display: grid /* Fill this in. */;
-    grid-template-columns: 4 /* Make Three columns of equal widths. */;
-    grid-template-rows: 2 /* Fill this in. */;
-    grid-template-areas:
-      "g9-1 g9-2 g9-3 g9-4"
-      "g9-1 g9-2 g9-3 g9-5";
+    display: flex; /* Fill this in. */;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -430,54 +425,39 @@ a {
     color: white;
     text-align: left;
   }
-  .grid__item-9-1 {
-    margin-top: 5px;
-    margin-left: 20px;
-    grid-area: g9-1;
-    justify-content: center;
-    margin-left: 40px;
-    color:black;
-  }
 
-  .grid__item-9-2 {
-    margin-top: 5px;
-    margin-left: 20px;
-    grid-area: g9-2;
-    justify-content: center;
-    margin-left: 40px;
-    color:black;
-  }
-
-  .grid__item-9-3 {
-    grid-area: g9-3;
-    margin-top: -10px;
-    flex-direction: column;
-    margin-left: 40px;
-    max-width: 750px;
+  
+  .grid__item-9-1,
+  .grid__item-9-2,
+  .grid__item-9-3,
+  .grid__item-9-4,
+  .grid__item-9-5 {
+    height: 100%; 
     display: flex;
-    align-items: left;
-    justify-content: center;
-    color:black;
-  }
-
-  .grid__item-9-4 {
-    grid-area: g9-4;
-    display: grid /* Fill this in. */;
-    grid-template-columns: 1 /* Make Three columns of equal widths. */;
-    grid-template-rows: 2 /* Fill this in. */;
-    grid-template-areas:
-      "g9-1"
-      "g9-2 ";
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    color:black;
+    width: 20%;
   }
 
   .grid__item-9-5 {
-    grid-area: g9-5;
-    display: flex; /* Fill this in. */;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    margin-top: 0px;
+    /* padding-top: 0; */
+    margin-bottom: 0;
+  }
+
+  .icon {
+    height: 50px;
+  }
+
+  .icons-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .name {
+    margin-bottom: 5px;
+    font-family: fantasy;
+    font-size: 20px;
   }

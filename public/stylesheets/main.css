@@ -7,9 +7,11 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     /* padding: 10px; */
     background-color: skyblue;
     background: transparent;
+    height: 50px;
 }
 
 a, .navbar-text {
@@ -20,6 +22,10 @@ a, .navbar-text {
 .logout {
     font-family: fantasy;
     text-transform: uppercase;
+    font-size: 16px;
+    border:0.16em solid white;
+    background: transparent;
+    color: white;
 }
 
 .logout:hover {

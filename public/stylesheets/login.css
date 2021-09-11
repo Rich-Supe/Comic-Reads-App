@@ -60,6 +60,8 @@ label {
     border:0.16em solid black;
     margin:2px 0.3em 0.3em 0;
     font-size: 14px;
+    font-family: fantasy;
+    text-transform: uppercase;
 }
 
 p {
