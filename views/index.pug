@@ -14,8 +14,9 @@ block content
   .wrapper
   .grid.grid__container
     .grid__section.grid__section-1.flex-container-1
-      button(type='button' class='demo_btn') Login As Demo User
-
+      if !locals.authenticated
+        button(type='button' class='demo_btn') Login As Demo User
+      
     .grid__section.grid__section-2
       .grid__item.grid__item-2-1 Know what you’re looking for?
       .grid__item.grid__item-2-2
