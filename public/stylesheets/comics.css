@@ -1,9 +1,13 @@
 #comicsGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .comicsCells {
+    display:flex;
+    flex-direction: column;
     justify-content: space-evenly;
     padding: 15px;
 }
@@ -16,8 +20,9 @@ img {
 p {
     margin-bottom: 0px;
     text-align: center;
-    font-size: 1.3rem;
+    font-weight:900;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 38px;
 }
 
 .cellButtons {
@@ -49,6 +54,10 @@ p {
     right: 0;
     z-index: 99;
 
+}
+
+.title {
+    width: 316px;
 }
 
 .dropdown-content a {
