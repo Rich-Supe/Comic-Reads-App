@@ -1,6 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    height: 100%;
   }
 
 .demo_btn {
@@ -116,10 +121,11 @@ a {
 }
 /* Main Grid Styles */
 .grid__container {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%/* Make the first column 2x wide as the second. */;
-    grid-template-rows: auto;
-    grid-template-areas:
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 25% 25% 25% 25% Make the first column 2x wide as the second.; */
+    /* grid-template-rows: auto; */
+    /* grid-template-areas:
       "header header header header"
       "main main main main"
       "carousel1 carousel1 carousel1 carousel1"
@@ -128,7 +134,7 @@ a {
       "carousel4 carousel4 carousel4 carousel4"
       "carousel5 carousel5 carousel5 carousel5"
       "news news news news"
-      "footer footer footer footer"
+      "footer footer footer footer" */
       /* Fill in the appropriate grid areas here. */;
   }
 
@@ -138,72 +144,93 @@ a {
   }
 
   .grid__section-1 {
-    grid-area: header /* Fill this in. */;
-    height: 770px;
-    background-image: url("/images/PageHeader_2000x800.jpg");
-    background-repeat: fill;
-    background-repeat: no-repeat;
-    background-size: 100vw 770px
+    height: 50%;
+    /* grid-area: header Fill this in.; */
+    /* height: 770px; */
+    /* width: 100%; */
+    /* background-image: url("/images/PageHeader_2000x800.jpg"); */
+    /* background-repeat: fill; */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100vw 770px */
 
   }
 
+  .splash-main-background {
+    width: 100%;
+  }
+
   .grid__section-2 {
-    grid-area: main /* Fill this in. */;
-    height: 175px;
+    /* grid-area: main Fill this in.; */
+    /* height: 175px; */
     background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
     background-position: center;
     color: white;
     font-size: 40px;
     display: flex; /* Fill this in. */;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: grid;
-    grid-template-columns: 5 /* Make five columns of equal widths. */;
-    grid-template-rows: 1 /* Fill this in. */;
-    grid-template-areas:
-      "g2-1"
-      "g2-2";
+    padding-top: 1%;
+    padding-bottom: 1%;
+    /* position: relative;
+    bottom: 200px; */
+    /* display: grid; */
+    /* grid-template-columns: 5 Make five columns of equal widths.; */
+    /* grid-template-rows: 1 Fill this in.; */
+    /* grid-template-areas: */
+      /* "g2-1" */
+      /* "g2-2"; */
   }
 
   .grid__item-2-1 {
-    grid-area: g2-1;
+    /* grid-area: g2-1; */
     font-size: 80px;
     color: Black;
   }
 
   .grid__item-2-2 {
-    grid-area: g2-2;
+    /* grid-area: g2-2; */
     color: Black;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-
+    width: 50%;
+    justify-self: center;
   }
 
+  .grid__item-2-3 {
+    /* color: Black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    justify-self: center;
+    /* margin-top: 1%; */
+    /* margin-bottom: 1%; */
+  }
 
   .grid__section-3 {
-    grid-area: carousel1/* Fill this in. */;
+    /* grid-area: carousel1Fill this in.; */
     height: 480px;
   }
 
   .grid__section-4 {
-    grid-area: carousel2 /* Fill this in. */;
+    /* grid-area: carousel2 Fill this in.; */
     height: 480px;
   }
 
   .grid__section-5 {
-    grid-area: carousel3 /* Fill this in. */;
+    /* grid-area: carousel3 Fill this in.; */
     height: 480px;
   }
 
   .grid__section-6 {
-    grid-area: carousel4/* Fill this in. */;
+    /* grid-area: carousel4Fill this in.; */
     height: 480px;
   }
 
   .grid__section-7 {
-    grid-area: carousel5 /* Fill this in. */;
+    /* grid-area: carousel5 Fill this in.; */
     height: 480px;
   }
 
@@ -374,18 +401,14 @@ a {
 
    /* Grid Section 8 News Styles */
   .grid__section-8 {
-    grid-area: news;
-    display: grid /* Fill this in. */;
-    grid-template-columns: 3 /* Make Three columns of equal widths. */;
-    grid-template-rows: 1 /* Fill this in. */;
-    grid-template-areas:
-      "g8-1 g8-2 g8-3"/* Fill in the appropriate grid areas here. */;
+    display: flex /* Fill this in. */;
   }
  .grid__item-8-1 {
-    grid-area: g8-1;
-    background-image: url("/images/Donate-your-Book.jpg");
+    /* grid-area: g8-1; */
+    background-image: url(" /images/Donate-your-Book.jpg");
     background-size: 700px 550px;
     height: 500px;
+    width: 33.3%; 
     background-position: center;
     display:flex;
     align-items: center;
@@ -397,6 +420,7 @@ a {
     background-image: url("/images/dcui-bg.jpg");
     background-position: -300px;
     height: 500px;
+    width: 33.3%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -407,6 +431,7 @@ a {
     background-image: url("/images/world-of-dc-bg.jpg");
     background-position: top;
     height: 500px;
+    width: 33.3%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -416,10 +441,9 @@ a {
   /* Grid Section 9 Footer Styles */
   .grid__section-9 {
     /* height: 100px; */
-    grid-area: footer;
     display: flex; /* Fill this in. */;
-    left: 0;
-    bottom: 0;
+    /* left: 0; */
+    margin-bottom: 0px;
     width: 100%;
     background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
     color: white;

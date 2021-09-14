@@ -1,6 +1,6 @@
 const demoButton= document.querySelector(".demo_btn");
 
-demoButton.addEventListener("click", async (event)=>{
+demoButton?.addEventListener("click", async (event)=>{
     const emailAddress = "demo@demo.com";
     const password = "password";
     const body = { emailAddress, password };

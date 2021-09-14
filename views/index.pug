@@ -14,44 +14,44 @@ block content
   .wrapper
   .grid.grid__container
     .grid__section.grid__section-1.flex-container-1
+      img(class='splash-main-background' src='/images/PageHeader_2000x800.jpg')
       if !locals.authenticated
         button(type='button' class='demo_btn') Login As Demo User
       
     .grid__section.grid__section-2
       .grid__item.grid__item-2-1 Know what you’re looking for?
       .grid__item.grid__item-2-2
-        .form-group
-        select(name="criteria" placeholder="criteria" id="criteria" class="dropdown")
-          option(value='' style="display: none") Search By
-          option(value='title') Title
-          option(value='author') Author
-          option(value='genre') Genre
-          option(value='keyword') Keyword
-        input#searchTitle.form-control(style="visibility: hidden" type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
-        div(style="visibility: hidden" id='secondDropdown')
-          select(style="visibility: hidden" name='Title' placeholder="Title" id="title" class="dropdown")
+        //- select(name="criteria" placeholder="criteria" id="criteria" class="dropdown")
+        //-   option(value='' style="display: none") Search By
+        //-   option(value='title') Title
+        //-   option(value='author') Author
+        //-   option(value='genre') Genre
+        input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
+        button(type='button' class='search_btn') Search
+          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+      //- .grid__item.grid__item-2-3
+        div(id='secondDropdown')
+          select(name='Title' placeholder="Title" id="title" class="dropdown")
             option(value='' style="display: none") Title
             each title in titles
               option(value= title)= title
-          select(style="visibility: hidden" name='Author' placeholder="Author" id="author" class="dropdown")
+        div(id='thirdDropdown')
+          select(name='Author' placeholder="Author" id="author" class="dropdown")
             option(value='' style="display: none") Author
             each author in authors
-             option(value= author)= author
-          select(style="visibility: hidden" name='Genre' placeholder="Genre" id="genre" class="dropdown")
-            option(value='' style="display: none") Genre
+              option(value= author)= author
+        div(id='fourthDropdown')
+          select(name='Genre' placeholder="Genre" id="genre" class="dropdown")
+            option(value='' st  yle="display: none") Genre
             each genre in genres
-              option(value= genre)= genre
-        button(type='button' class='search_btn') Search
-          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+              option(value= genre)= genre  
     .grid__section.grid__section-8
       .grid__item.grid__item-8-1
-
+        
       .grid__item.grid__item-8-2
-        button(type='button' class='donate_btn')
-          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Donate Here!
+        
       .grid__item.grid__item-8-3
-        button(type='button' class='buy_btn')
-          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Buy Merchandise!
+        
     .grid__section.grid__section-9
       .grid__item.grid__item-9-1
         p(class='name') Github Repo
