@@ -2,16 +2,116 @@ img {
     /* margin-top: 3rem; */
     /* width: 316px;
     height: 475px; */
-    width: 25%;
-    height: 37.5%;
+    width: 75%;
+    height: 75%;
 }
 
-/* p {
-    font-size: larger;
+.create-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+
+.comment-text-area {
+    width: 100%;
+    /* position: relative;
+    left: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.left-reviews {
+    width: 80%;
+}
+
+.comment {
+    width: 90%;
+    height:200px;
+}
+
+#comic-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    width: 30%;
+}
+
+.submitReviewBtn {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 20%;   
+}
+
+.dropdown {
+    margin-bottom: 2%;
+}
+
+.review-body {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.review-btns {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 3%;
+}
+
+/* button {
+    font-family: fantasy;
+    width: 200%;
 } */
 
-/* #catalogueInfo {
+.individual-review {
     display: flex;
-    justify-content: column;
-    height: 70%;
-} */
+    flex-direction: column;
+    align-items: center;
+    border: 3px black solid;
+    margin-bottom: 3%;
+    overflow-wrap: anywhere;
+}
+
+.edit-form,
+.delete-form {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.comic-title,
+.reviews-title {
+    font-size: 25px;
+    font-family: fantasy;
+    text-align: center;
+}
+
+.comic-genre {
+    margin-top: 0;
+}
+
+#catalogueInfo {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    height: 800px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 3px black;
+    width: 60%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+p {
+    font-family: fantasy;
+}
