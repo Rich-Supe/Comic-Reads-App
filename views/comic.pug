@@ -42,7 +42,7 @@ block content
             div(class='left-reviews')
                 each review in reviews
                     div(class='individual-review')
-                        p(class='review-body')= review.review
+                        p(class='review-body') "#{review.review}"
                         div(class='review-btns')
                             form(action=`/reviews/${comic.id}/edit/` method="post" class="edit-form")
                                 div

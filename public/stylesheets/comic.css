@@ -28,8 +28,8 @@ img {
 }
 
 .comment {
-    width: 90%;
-    height:200px;
+    width: 80%;
+    height:120px;
 }
 
 #comic-frame {
@@ -53,6 +53,8 @@ img {
 .review-body {
     text-align: center;
     margin-top: 3%;
+    font: unset;
+    font-style: italic;
 }
 
 .review-btns {
