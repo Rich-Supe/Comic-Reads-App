@@ -123,6 +123,7 @@ a {
 .grid__container {
     display: flex;
     flex-direction: column;
+    height: 100%;
     /* grid-template-columns: 25% 25% 25% 25% Make the first column 2x wide as the second.; */
     /* grid-template-rows: auto; */
     /* grid-template-areas:
@@ -143,8 +144,25 @@ a {
 
   }
 
+  .author-search,
+  .splash-image-div,
+  .genre-search {
+    border: 1px solid #333333;
+    width: 33.3333333333%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-label {
+    font-family: fantasy;
+  }
+
   .grid__section-1 {
     height: 50%;
+    display: flex;
+    justify-content:center;
+    background-image: url('../images/5261-READ_header_2000x800_options_orange2.png');
     /* grid-area: header Fill this in.; */
     /* height: 770px; */
     /* width: 100%; */
@@ -155,8 +173,9 @@ a {
 
   }
 
-  .splash-main-background {
-    width: 100%;
+  .splash-image {
+    width: 78%;
+
   }
 
   .grid__section-2 {
@@ -402,6 +421,10 @@ a {
    /* Grid Section 8 News Styles */
   .grid__section-8 {
     display: flex /* Fill this in. */;
+    justify-content: center;
+    background-image: url('/images/5261-READ_header_2000x800_options_orange2.png');
+    background-repeat: no-repeat;
+    background-size: fill;
   }
  .grid__item-8-1 {
     /* grid-area: g8-1; */

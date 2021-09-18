@@ -13,10 +13,6 @@ block content
   //- img(src="/images/PageHeader_2000x800.jpg")
   .wrapper
   .grid.grid__container
-    .grid__section.grid__section-1.flex-container-1
-      img(class='splash-main-background' src='/images/PageHeader_2000x800.jpg')
-      if !locals.authenticated
-        button(type='button' class='demo_btn') Login As Demo User
       
     .grid__section.grid__section-2
       .grid__item.grid__item-2-1 Know what you’re looking for?
@@ -30,27 +26,39 @@ block content
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
       .grid__item.grid__item-2-3
-        div(id='secondDropdown')
-          select(name='Title' placeholder="Title" id="title" class="dropdown")
-            option(value='' style="display: none") Title
-            each title in titles
-              option(value= title[1])= title[0]
+        
+        
+          
+    .grid__section.grid__section-1.flex-container-1
+      div(class='author-search')
         div(id='thirdDropdown')
+          label(class='search-label')  Search our collection by author:
           select(name='Author' placeholder="Author" id="author" class="dropdown")
             option(value='' style="display: none") Author
             each author in authors
               option(value= author)= author
+      div(class='splash-image-div')
+          div(id='secondDropdown')
+          label(class='search-label')  Search our collection by title:
+          select(name='Title' placeholder="Title" id="title" class="dropdown")
+            option(value='' style="display: none") Title
+            each title in titles
+              option(value= title[1])= title[0]
+      div(class='genre-search')
         div(id='fourthDropdown')
+          label(class='search-label')  Search our collection by genre :
           select(name='Genre' placeholder="Genre" id="genre" class="dropdown")
             option(value='' st  yle="display: none") Genre
             each genre in genres
-              option(value= genre)= genre  
+              option(value= genre)= genre
+      
     .grid__section.grid__section-8
-      .grid__item.grid__item-8-1
+      img(class='splash-image' src='/images/PageHeader_2000x800.jpg')
+      //- .grid__item.grid__item-8-1
         
-      .grid__item.grid__item-8-2
+      //- .grid__item.grid__item-8-2
         
-      .grid__item.grid__item-8-3
+      //- .grid__item.grid__item-8-3
         
     .grid__section.grid__section-9
       .grid__item.grid__item-9-1
