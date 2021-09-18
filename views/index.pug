@@ -34,7 +34,7 @@ block content
           select(name='Title' placeholder="Title" id="title" class="dropdown")
             option(value='' style="display: none") Title
             each title in titles
-              option(value= title)= title
+              option(value= title[1])= title[0]
         div(id='thirdDropdown')
           select(name='Author' placeholder="Author" id="author" class="dropdown")
             option(value='' style="display: none") Author

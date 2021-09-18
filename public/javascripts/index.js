@@ -7,7 +7,7 @@ let author = document.getElementById('author');
 let genre = document.getElementById('genre');
 
 title.addEventListener('change', () => {
-    window.location.href = `/comics/search/title/${title.value}`
+    window.location.href = `/comics/${title.value}`
 })
 
 author.addEventListener('change', () => {

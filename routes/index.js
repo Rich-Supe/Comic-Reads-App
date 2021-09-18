@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
   let genres = [];
   comics.forEach(comic => {
     if(!titles.includes(comic.title)) {
-      titles.push(comic.title);
+      titles.push([comic.title, comic.id]);
     }
   })
   comics.forEach(comic => {
