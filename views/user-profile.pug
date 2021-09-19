@@ -14,7 +14,7 @@ block content
                 h3(class="shelf-title") #{shelf.name}
                 h2(id=shelf.name)
                     each Comic in shelf.Comics
-                        +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id)
+                        +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id, shelf = true  )
 
 
 //- div(class)
