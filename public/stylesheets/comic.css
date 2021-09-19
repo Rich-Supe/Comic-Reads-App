@@ -1,7 +1,4 @@
 img {
-    /* margin-top: 3rem; */
-    /* width: 316px;
-    height: 475px; */
     width: 75%;
     height: 75%;
 }
@@ -16,8 +13,6 @@ img {
 
 .comment-text-area {
     width: 100%;
-    /* position: relative;
-    left: 100px; */
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -64,11 +59,6 @@ img {
     margin-bottom: 3%;
 }
 
-/* button {
-    font-family: fantasy;
-    width: 200%;
-} */
-
 .individual-review {
     display: flex;
     flex-direction: column;
@@ -97,7 +87,6 @@ img {
 
 #catalogueInfo {
     display: flex;
-    /* flex-direction: column; */
     align-items: flex-start;
     justify-content: space-evenly;
 
@@ -179,4 +168,4 @@ p {
     border-color: rgb(9, 255, 0);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     font-size: 17px;
-  }
+}

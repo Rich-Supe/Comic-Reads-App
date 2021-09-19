@@ -18,14 +18,33 @@
 
 .demo_btn,
 .btn-primary {
-    background-color: rgb(0, 0, 0, 0);
-    color: black;
-    padding:0.2em 1em 0.4em;
+    padding:0.5em 1em;
     border:0.16em solid black;
-    margin:2px 0.3em 0.3em 0;
-    font-family: fantasy;
-    text-transform: uppercase;
-    font-size: 14px;
+    margin:4px 0.3em 0.3em 0;
+    text-transform:uppercase;
+    font-family:fantasy;
+    font-weight:400;
+    text-align:center;
+    transition: all 0.15s;
+    right:0;
+}
+
+.demo_btn {
+    color:#FFFFFF;
+    border:0.16em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+.demo_btn:hover {
+    color:#c3c1c1;
+    border-color:#c3c1c1;
+}
+  
+.demo_btn:active {
+    color:#BBBBBB;
+    border-color:#BBBBBB;
 }
 
 .py-4 {

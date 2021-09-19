@@ -48,7 +48,6 @@ button:not(.logout) {
     border-radius: 10rem;
     text-transform: uppercase;
     font-size: 1rem;
-    /* background-color: rgb(250, 201, 238); */
     color:black;
     font-family: fantasy;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -64,19 +63,15 @@ button:hover {
     display: flex;
     align-items: center;
     overflow-x: auto;
-    /* padding-bottom: 10px; */
 }
 
 .infoText {
     height: 85px;
     display: flex;
-    /* background-color: black; */
 }
 
 .h2_text {
     margin-top: 20px;
-    /* padding-top: 10px;
-    padding-bottom: 5px; */
     font-size: 26px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -89,9 +84,7 @@ h1 {
     
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 35px;
-    border: black;
-    /* border-style: hidden hidden thin hidden; */
-   
+    border: black;   
 }
 
 .comic-title {
