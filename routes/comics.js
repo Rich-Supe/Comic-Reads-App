@@ -56,11 +56,11 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comic = await Comic.findByPk(id);
     const reviews = await Review.findAll( {where: {comicId: id}})
     let currUser = req.session.auth.userId
-    const statusABC = await Collection.findAll({where:{userId:currUser}});
-    let status = {}
-    statusABC.forEach(el =>{
-        status[el.id]=el.dataValues
-    })
+    const status = await Collection.findOne({where:{
+        userId:currUser,
+        comicId:id    
+    }});
+    console.log('--------------------', status)
 
     res.render('comic', { comic, reviews, status })
 }));

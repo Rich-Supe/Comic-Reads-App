@@ -156,7 +156,10 @@ p {
     display: block;
   }
 
-.shelf_btn {
+.shelf_btn,
+.submitReviewBtn,
+.editReviewBtn,
+.deleteReviewBtn {
     border: none;
     background-color: rgb(0, 0, 0, 0);
     color: white;
@@ -167,7 +170,10 @@ p {
     font-size: 16px;
 }
 
-.shelf_btn:hover {
+.shelf_btn:hover,
+.submitReviewBtn:hover,
+.editReviewBtn:hover,
+.deleteReviewBtn:hover {
     border: 0.18em solid ;
     background-color: #4CAF50;
     border-color: rgb(9, 255, 0);
