@@ -108,18 +108,8 @@ body {
   font-family: fantasy;
 }
 
+
 .grid__section-1 {
-  height: 50%;
-  display: flex;
-  justify-content:center;
-  background-image: url('../images/5261-READ_header_2000x800_options_orange2.png');
-}
-
-.splash-image {
-  width: 78%;
-}
-
-.grid__section-2 {
   background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
   background-position: center;
   color: white;
@@ -132,12 +122,12 @@ body {
   padding-bottom: 1%;
 }
 
-.grid__item-2-1 {
+.grid__item-1-1 {
   font-size: 80px;
   color: Black;
 }
 
-.grid__item-2-2 {
+.grid__item-1-2 {
   color: Black;
   display: flex;
   justify-content: center;
@@ -146,11 +136,22 @@ body {
   justify-self: center;
 }
 
-.grid__item-2-3 {
+.grid__item-1-3 {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-self: center;
+}
+
+.grid__section-2 {
+  height: 50%;
+  display: flex;
+  justify-content:center;
+  background-image: url('../images/5261-READ_header_2000x800_options_orange2.png');
+}
+
+.splash-image {
+  width: 78%;
 }
 
 .flex-container-1 {
@@ -162,7 +163,7 @@ body {
 }
 
   /* Grid Section 8 News Styles */
-.grid__section-8 {
+.grid__section-3 {
   display: flex;
   justify-content: center;
   background-image: url('/images/5261-READ_header_2000x800_options_orange2.png');
@@ -171,7 +172,7 @@ body {
 }
 
 /* Grid Section 9 Footer Styles */
-.grid__section-9 {
+.grid__section-4 {
   display: flex;
   margin-bottom: 0px;
   width: 100%;
@@ -181,11 +182,11 @@ body {
 }
 
 
-.grid__item-9-1,
-.grid__item-9-2,
-.grid__item-9-3,
-.grid__item-9-4,
-.grid__item-9-5 {
+.grid__item-4-1,
+.grid__item-4-2,
+.grid__item-4-3,
+.grid__item-4-4,
+.grid__item-4-5 {
   height: 100%; 
   display: flex;
   flex-direction: column;
@@ -194,18 +195,18 @@ body {
   width: 20%;
 }
 
-  .icon {
-    height: 50px;
-  }
+.icon {
+  height: 50px;
+}
 
-  .icons-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
+.icons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
 
-  .name {
-    margin-bottom: 5px;
-    font-family: fantasy;
-    font-size: 20px;
-  }
+.name {
+  margin-bottom: 5px;
+  font-family: fantasy;
+  font-size: 20px;
+}
