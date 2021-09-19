@@ -65,16 +65,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     res.render('comic', { comic, reviews, status })
 }));
 
-//Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
-// router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
-//     const comicId = parseInt(req.params.id, 10);
-//     //gotta find model root for the "want to read"
-//     let currUser = req.session.auth.userId
-//     const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
-//     await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
-//     res.json({"post":"success"});
-// }));
-
 router.post('/', asyncHandler(async(req, res) => {
     let currUser = req.session.auth.userId
     const { bookId, hasRead, wantsToRead }  = req.body

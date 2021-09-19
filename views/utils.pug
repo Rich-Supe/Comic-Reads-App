@@ -1,5 +1,3 @@
-
-
 mixin validationErrorSummary(errors)
   if errors
     div(class='alert alert-danger' role='alert')
@@ -18,8 +16,6 @@ mixin comicCard( imageUrl, title, author, genre, id, shelf=false )
   div(class='comicCells' id= id)
     div(class='title')
       p= title
-      //- p= author 
-      //- p= genre
     div(class='comicImage')
       a(href=`/comics/${id}`)
         img(src=imageUrl)

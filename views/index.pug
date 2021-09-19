@@ -1,7 +1,5 @@
 extends layout
 
-//- includes shelf.pug
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -10,25 +8,16 @@ append head
 block content
   script(src="/javascripts/demoButton.js" type="module" defer)
 
-  //- img(src="/images/PageHeader_2000x800.jpg")
   .wrapper
-  .grid.grid__container
-      
+  .grid.grid__container      
     .grid__section.grid__section-2
       .grid__item.grid__item-2-1 Know what you’re looking for?
       .grid__item.grid__item-2-2
-        //- select(name="criteria" placeholder="criteria" id="criteria" class="dropdown")
-        //-   option(value='' style="display: none") Search By
-        //-   option(value='title') Title
-        //-   option(value='author') Author
-        //-   option(value='genre') Genre
         input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
       .grid__item.grid__item-2-3
-        
-        
-          
+
     .grid__section.grid__section-1.flex-container-1
       div(class='author-search')
         div(id='thirdDropdown')
@@ -54,11 +43,6 @@ block content
       
     .grid__section.grid__section-8
       img(class='splash-image' src='/images/PageHeader_2000x800.jpg')
-      //- .grid__item.grid__item-8-1
-        
-      //- .grid__item.grid__item-8-2
-        
-      //- .grid__item.grid__item-8-3
         
     .grid__section.grid__section-9
       .grid__item.grid__item-9-1
