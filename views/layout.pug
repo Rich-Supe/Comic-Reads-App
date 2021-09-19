@@ -11,7 +11,7 @@ html
         if locals.authenticated
           span(class='navbar-text') Welcome #{user.firstName}!
           a(href='/') Home
-          a(href=`/user/${user.id}`) Profile
+          a(href=`/user/${user.id}`) Shelves
           a(href='/comics') Comics
 
           div(id='navButtons')
