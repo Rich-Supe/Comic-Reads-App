@@ -1,0 +1,23 @@
+.frame {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.comicCells {
+    padding: 15px;
+    width: 346px;   
+}
+
+img {
+    width: 316px;
+    height: 475px;
+}
+
+p {
+    margin-bottom: 0px;
+    text-align: center;
+    font-weight:900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 38px;
+}

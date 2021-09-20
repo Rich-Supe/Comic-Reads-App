@@ -56,24 +56,14 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const comic = await Comic.findByPk(id);
     const reviews = await Review.findAll( {where: {comicId: id}})
     let currUser = req.session.auth.userId
-    const statusABC = await Collection.findAll({where:{userId:currUser}});
-    let status = {}
-    statusABC.forEach(el =>{
-        status[el.id]=el.dataValues
-    })
+    const status = await Collection.findOne({where:{
+        userId:currUser,
+        comicId:id    
+    }});
+    console.log('--------------------', status)
 
     res.render('comic', { comic, reviews, status })
 }));
-
-//Stephen - Updating Database///////////////////////////////////////////////////////////////////////////////////////////
-// router.patch('/:id(\\d+)', asyncHandler(async(req, res) => {
-//     const comicId = parseInt(req.params.id, 10);
-//     //gotta find model root for the "want to read"
-//     let currUser = req.session.auth.userId
-//     const { targetInfo, bookId, hasRead, wantToRead }  = req.body //targetInfo is the className
-//     await Collection.create({ hasRead:hasRead, wantsToRead:wantToRead, comicId:comicId, userId:currUser });
-//     res.json({"post":"success"});
-// }));
 
 router.post('/', asyncHandler(async(req, res) => {
     let currUser = req.session.auth.userId

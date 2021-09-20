@@ -1,15 +1,15 @@
 body {
     background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
-    /* background-color:rgb(155, 141, 141); */
 }
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* padding: 10px; */
+    align-items: center;
     background-color: skyblue;
     background: transparent;
+    height: 50px;
 }
 
 a, .navbar-text {
@@ -20,6 +20,10 @@ a, .navbar-text {
 .logout {
     font-family: fantasy;
     text-transform: uppercase;
+    font-size: 16px;
+    border:0.16em solid white;
+    background: transparent;
+    color: white;
 }
 
 .logout:hover {

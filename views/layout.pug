@@ -11,7 +11,7 @@ html
         if locals.authenticated
           span(class='navbar-text') Welcome #{user.firstName}!
           a(href='/') Home
-          a(href=`/user/${user.id}`) Profile
+          a(href=`/user/${user.id}`) Shelves
           a(href='/comics') Comics
 
           div(id='navButtons')
@@ -21,5 +21,7 @@ html
           span(class='navbar-text')
           a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
           a(class='btn btn-sm btn-dark' href='/user/register') Register
+          if !locals.authenticated
+            button(type='button' class='demo_btn') Login As Demo User
             
     block content

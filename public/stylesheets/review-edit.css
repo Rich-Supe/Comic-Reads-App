@@ -1,0 +1,53 @@
+.confirm-edit-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.edit-form {
+    border: 3px solid black;
+    width: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-label {
+    font-family: fantasy;
+    font-size: 55px;
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 3%; 
+}
+
+.edit {
+    width: 80%;
+    height: 120px;
+}
+
+.editReviewBtn {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.edit-btns {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.editReviewBtn {
+    font-family: fantasy;
+    height: 30px;
+    font-size: 20px;
+    position: relative;
+}

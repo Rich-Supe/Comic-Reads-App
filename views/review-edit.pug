@@ -3,9 +3,11 @@ extends layout.pug
 include utils.pug
 
 block content
-    //- h3= "Edit Review"
-    form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/edit` method="post" class="edit-form")
-            div
-                label Comment
-                textarea(name='editCommentArea', class='edit')
-            button(type='submit' class='editReviewBtn') Edit Review
+    link(rel="stylesheet" href="/stylesheets/review-edit.css")
+    div(class='confirm-edit-div')
+        form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/edit` method="post" class="edit-form")
+            h3(class='review-label')= "Edit Review"
+            textarea(name='editCommentArea' class='edit') #{targetReview.review}
+            div(class='edit-btns')
+                button(type='submit' class='editReviewBtn') Edit Review
+                a(href=`/comics/${targetReview.comicId}`) Cancel

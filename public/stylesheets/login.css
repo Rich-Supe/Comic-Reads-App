@@ -1,16 +1,73 @@
-/* body {
-    height: 100%;
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-frame {
+    border: 0.16em solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: relative;
+    left: 33.3333333%;
+    margin-top: 10%;
+}
+
+.py-4 {
+    margin-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form {
-    background-color: azure;
+label {
+    font-size: 1.3rem;
+    font-family: fantasy;
+    text-transform: uppercase;
 }
 
-//Each input belongs to class form-control
+.demo_btn,
+.btn-primary {
+    padding:0.5em 1em;
+    border:0.16em solid black;
+    margin:4px 0.3em 0.3em 0;
+    text-transform:uppercase;
+    font-family:fantasy;
+    font-weight:400;
+    text-align:center;
+    transition: all 0.15s;
+    right:0;
+    
+}
 
-.form-control {
-    color:crimson;
-} */
+.demo_btn {
+    color:#FFFFFF;
+    border:0.16em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+.demo_btn:hover {
+    color:#c3c1c1;
+    border-color:#c3c1c1;
+}
+  
+.demo_btn:active {
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+}
+
+p {
+    margin-top: 10%;
+    text-align: center;
+}

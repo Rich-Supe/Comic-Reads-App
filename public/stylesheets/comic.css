@@ -1,17 +1,171 @@
 img {
-    /* margin-top: 3rem; */
-    /* width: 316px;
-    height: 475px; */
-    width: 25%;
-    height: 37.5%;
+    width: 75%;
+    height: 75%;
 }
 
-/* p {
-    font-size: larger;
-} */
-
-/* #catalogueInfo {
+.create-form {
     display: flex;
-    justify-content: column;
-    height: 70%;
-} */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+
+.comment-text-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.left-reviews {
+    width: 80%;
+}
+
+.comment {
+    width: 80%;
+    height:120px;
+}
+
+#comic-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    width: 30%;
+}
+
+.submitReviewBtn {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 20%;   
+}
+
+.dropdown {
+    margin-bottom: 2%;
+}
+
+.review-body {
+    text-align: center;
+    margin-top: 3%;
+    font: unset;
+    font-style: italic;
+}
+
+.review-btns {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 3%;
+}
+
+.individual-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px black solid;
+    margin-bottom: 3%;
+    overflow-wrap: anywhere;
+}
+
+.edit-form,
+.delete-form {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.comic-title,
+.reviews-title {
+    font-size: 25px;
+    font-family: fantasy;
+    text-align: center;
+}
+
+.comic-genre {
+    margin-top: 0;
+}
+
+#catalogueInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    height: 800px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 3px black;
+    width: 60%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+p {
+    font-family: fantasy;
+}
+
+.cellButtons {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.dropdown {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin: 5px 5px 5px 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+.dropdown:hover {
+    border: 1px solid ;
+    border-color: rgb(0, 0, 0)
+  }
+.dropdown-content {
+    position: absolute;
+    background-color: #4CAF50;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.shelf_btn,
+.submitReviewBtn,
+.editReviewBtn,
+.deleteReviewBtn {
+    border: none;
+    background-color: rgb(0, 0, 0, 0);
+    color: white;
+    padding:0.5em 1em;
+    background-color: #4CAF50;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin:4px 0.3em 0.3em 0;
+    font-size: 16px;
+}
+
+.shelf_btn:hover,
+.submitReviewBtn:hover,
+.editReviewBtn:hover,
+.deleteReviewBtn:hover {
+    border: 0.18em solid ;
+    background-color: #4CAF50;
+    border-color: rgb(9, 255, 0);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 17px;
+}

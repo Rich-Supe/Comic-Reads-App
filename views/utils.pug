@@ -1,5 +1,3 @@
-
-
 mixin validationErrorSummary(errors)
   if errors
     div(class='alert alert-danger' role='alert')
@@ -13,21 +11,14 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text')
     label(for=fieldName)= labelText
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
-mixin comicCard( imageUrl, title, author, genre, id )
+mixin comicCard( imageUrl, title, author, genre, id, shelf=false )
+  script(src="/javascripts/shelfButton.js" type="module" defer)
   div(class='comicCells' id= id)
-    //- div(class='infoText')
-    //-   label(class='comic-title')= title
-    //-   label= author 
-    //-   label= genre
+    div(class='title')
+      p= title
     div(class='comicImage')
       a(href=`/comics/${id}`)
         img(src=imageUrl)
-    div(class='infoText')
-      label(class='comic-title')= title
-      label= author 
-      label= genre
-    div(class='cellButtons')
-      button(type='submit' class='remove-shelf_btn' name= `button${id}` id=id) Remove From Shelf
-    
-
-
+    if shelf
+      div(class='cellButtons')
+        button(type='submit' class='remove-shelf_btn' name= `button${id}` id=id) Remove From Shelf

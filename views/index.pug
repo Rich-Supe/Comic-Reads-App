@@ -1,7 +1,5 @@
 extends layout
 
-//- includes shelf.pug
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -10,86 +8,79 @@ append head
 block content
   script(src="/javascripts/demoButton.js" type="module" defer)
 
-  //- img(src="/images/PageHeader_2000x800.jpg")
   .wrapper
-  .grid.grid__container
-    .grid__section.grid__section-1.flex-container-1
-      button(type='button' class='demo_btn') Login As Demo User
-
-    .grid__section.grid__section-2
-      .grid__item.grid__item-2-1 Know what you’re looking for?
-      .grid__item.grid__item-2-2
-        .form-group
-        select(name="criteria" placeholder="criteria" id="criteria" class="dropdown")
-          option(value='' style="display: none") Search By
-          option(value='title') Title
-          option(value='author') Author
-          option(value='genre') Genre
-          option(value='keyword') Keyword
-        input#searchTitle.form-control(style="visibility: hidden" type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
-        div(style="visibility: hidden" id='secondDropdown')
-          select(style="visibility: hidden" name='Title' placeholder="Title" id="title" class="dropdown")
-            option(value='' style="display: none") Title
-            each title in titles
-              option(value= title)= title
-          select(style="visibility: hidden" name='Author' placeholder="Author" id="author" class="dropdown")
-            option(value='' style="display: none") Author
-            each author in authors
-             option(value= author)= author
-          select(style="visibility: hidden" name='Genre' placeholder="Genre" id="genre" class="dropdown")
-            option(value='' style="display: none") Genre
-            each genre in genres
-              option(value= genre)= genre
+  .grid.grid__container      
+    .grid__section.grid__section-1
+      .grid__item.grid__item-1-1 Know what you’re looking for?
+      .grid__item.grid__item-1-2
+        input#searchTitle.form-control(type='searchTitle', name="searchTitle", placeholder='Enter Search Criteria Here')
         button(type='button' class='search_btn') Search
           a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-    .grid__section.grid__section-8
-      .grid__item.grid__item-8-1
+      .grid__item.grid__item-1-3
 
-      .grid__item.grid__item-8-2
-        button(type='button' class='donate_btn')
-          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Donate Here!
-      .grid__item.grid__item-8-3
-        button(type='button' class='buy_btn')
-          a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Buy Merchandise!
-    .grid__section.grid__section-9
-      .grid__item.grid__item-9-1
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Read"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Watch"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Marvel"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "DC"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Community"
-      .grid__item.grid__item-9-2
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "About Comic-Reads"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Jobs / Internships"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "FAQ"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Events"
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          li= "Copyrights"
-      .grid__item.grid__item-9-3
-        li= "© 2021 WhaleTail. Entertainment Inc."
-        li= "All rights reserved. Cause we cooler than you."
-        li= "Lead Coders: Rich Supe, Mike Sineath, Nathan Mount, and Stephen Choung"
-        li= 'The amazing code on this website and all related elements are © & TM WhaleTail.'
-
-      .grid__item.grid__item-9-4 Follow Us on Social Media!
-
-      .grid__item.grid__item-9-5
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          img(src="/images/iconfinder_1_Instagram_colored_svg_1_5296765.png" class="favicon" )
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          img(src="/images/iconfinder_1_Twitter3_colored_svg_5296516 (1).png" class="favicon")
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          img(src="/images/iconfinder_Colored_Facebook3_svg_5365678.png" class="favicon")
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          img(src="/images/iconfinder_1_Pinterest_colored_svg_5296503.png" class="favicon")
-        a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-          img(src="/images/iconfinder_1_Whatsapp2_colored_svg_5296520.png" class="favicon")
+    .grid__section.grid__section-2.flex-container-1
+      div(class='author-search')
+        div(id='thirdDropdown')
+          label(class='search-label')  Search our collection by author:
+          select(name='Author' placeholder="Author" id="author" class="dropdown")
+            option(value='' style="display: none") Author
+            each author in authors
+              option(value= author)= author
+      div(class='splash-image-div')
+          div(id='secondDropdown')
+          label(class='search-label')  Search our collection by title:
+          select(name='Title' placeholder="Title" id="title" class="dropdown")
+            option(value='' style="display: none") Title
+            each title in titles
+              option(value= title[1])= title[0]
+      div(class='genre-search')
+        div(id='fourthDropdown')
+          label(class='search-label') Search our collection by genre :
+          select(name='Genre' placeholder="Genre" id="genre" class="dropdown")
+            option(value='' st  yle="display: none") Genre
+            each genre in genres
+              option(value= genre)= genre
+      
+    .grid__section.grid__section-3
+      img(class='splash-image' src='/images/PageHeader_2000x800.jpg')
+        
+    .grid__section.grid__section-4
+      .grid__item.grid__item-4-1
+        p(class='name') Github Repo
+        div(class='icons-container')
+          a(href="https://github.com/Rich-Supe/Comic-Reads-App")
+            img(src="/images/see-all-open-source-repositories-github-logo-11563031735gubsot66ry.png" class='icon')
+      .grid__item.grid__item-4-2
+        p(class='name') Rich Supe
+        div(class='icons-container')
+          a(href="https://github.com/Rich-Supe")
+            img(src='/images/kisspng-github-computer-icons-icon-design-github-5ab8a31e334e73.4114704215220498222102.png' class='icon')
+          a(href="https://www.linkedin.com/in/richard-supe/")
+            img(src='/images/img_210185.png' class='icon') 
+          a(href="https://angel.co/u/rich-supe")
+            img(src='/images/png-transparent-computer-icons-angellist-font-others-miscellaneous-hand-logo-thumbnail.png' class='icon')
+      .grid__item.grid__item-4-3
+        p(class='name') Mike Sineath
+        div(class='icons-container')
+          a(href="https://github.com/msineath")
+            img(src='/images/kisspng-github-computer-icons-icon-design-github-5ab8a31e334e73.4114704215220498222102.png' class='icon')
+          a(href="https://www.linkedin.com/in/mike-sineath-93149a213/")
+            img(src='/images/img_210185.png' class='icon')
+          a(href="https://angel.co/u/michael-sineath")
+            img(src='/images/png-transparent-computer-icons-angellist-font-others-miscellaneous-hand-logo-thumbnail.png' class='icon')
+      .grid__item.grid__item-4-4
+        p(class='name') Stephen Choung
+        div(class='icons-container')
+          a(href="https://github.com/Twprcntmlk")
+            img(src='/images/kisspng-github-computer-icons-icon-design-github-5ab8a31e334e73.4114704215220498222102.png' class='icon')
+          a(href="https://www.linkedin.com/in/stephen-choung-jino/")
+            img(src='/images/img_210185.png' class='icon')
+          a(href="https://angel.co/u/stephen-choung")
+            img(src='/images/png-transparent-computer-icons-angellist-font-others-miscellaneous-hand-logo-thumbnail.png' class='icon')
+      .grid__item.grid__item-4-5
+        p(class='name') Nathan Mount
+        div(class='icons-container')
+          a(href="https://github.com/nmount")
+            img(src='/images/kisspng-github-computer-icons-icon-design-github-5ab8a31e334e73.4114704215220498222102.png' class='icon')
+          a(href="https://www.linkedin.com/in/nathan-mount-458bba133/")
+            img(src='/images/img_210185.png' class='icon')

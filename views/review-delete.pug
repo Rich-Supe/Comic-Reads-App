@@ -1,7 +1,13 @@
 extends layout.pug
 
 block content
-    form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/delete` method='post' class="delete-form")
-        div
-            label Delete?
-        button(class='deleteReviewBtn' type='submit') Delete Review
+    link(rel="stylesheet" href="/stylesheets/review-delete.css")
+    div(class='confirm-delete-div')
+        form(action=`/comics/${targetReview.comicId}/reviews/${targetReview.id}/delete` method='post' class="delete-form")
+            div(class='delete-review-text-label')
+                label(class='review-label') Are You Sure You Wish To Delete This Review?
+            div(class='delete-review-text-body')
+                p(class='review-content') "#{targetReview.review}"
+            div(class='delete-btns')
+                button(class='deleteReviewBtn' type='submit') Delete Review
+                a(href=`/comics/${targetReview.comicId}`) Cancel
