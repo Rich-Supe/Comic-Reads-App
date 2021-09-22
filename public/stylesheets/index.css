@@ -66,16 +66,20 @@ body {
 .search_btn{
   border: none;
   background-color: rgb(0, 0, 0, 0);
-  color:#FFFFFF;
+  color: white;
   padding:0.2em 1em 0.4em;
-  border:0.16em solid #FFFFFF;
-  margin:2px 0.3em 0.3em 0;
+  border:0.16em solid white;
+  border-radius: 15px;
+  margin:0.3em 0.3em 0.3em 1em;
   font-size: 14px;
+  font-family: fantasy;
+  
 }
 
 .search_btn:hover {
-  border-color: rgb(200, 200, 200);
-  color: rgb(235, 228, 228);
+  background-color: rgb(223, 96, 11);
+  color: black;
+  cursor: pointer;
 }
 
 #searchTitle{
@@ -90,14 +94,10 @@ body {
     height: 100%;
 }
 
-.grid__section {
-  border: 1px solid #333333;
-}
-
 .author-search,
 .splash-image-div,
 .genre-search {
-  border: 1px solid #333333;
+  /* border: 1px solid #333333; */
   width: 33.3333333333%;
   display: flex;  
   justify-content: center;
@@ -106,13 +106,17 @@ body {
 
 .search-label {
   font-family: fantasy;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  margin-right: 5px;
 }
 
 
 .grid__section-1 {
-  background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
-  background-position: center;
-  color: white;
+  background-image: url("/images/354755-beautiful-comic-book-background-1920x1080.jpg");
+  background-position-y: 33%;
+  color: white  ;
   font-size: 40px;
   display: flex;
   flex-direction: column;
@@ -123,8 +127,11 @@ body {
 }
 
 .grid__item-1-1 {
-  font-size: 80px;
-  color: Black;
+  font-size: 70px;
+  font-weight: 300;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: fantasy; 
 }
 
 .grid__item-1-2 {
@@ -144,31 +151,30 @@ body {
 }
 
 .grid__section-2 {
-  height: 50%;
+  min-height: 7%;
   display: flex;
   justify-content:center;
-  background-image: url('../images/5261-READ_header_2000x800_options_orange2.png');
+  background-image: url('/images/354755-beautiful-comic-book-background-1920x1080.jpg');
+  background-position-x: center;
+  background-position-y:45%;
+  background-size: fill;
 }
 
 .splash-image {
-  width: 78%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .flex-container-1 {
   display: flex;
 }
 
-.grid__item {
-  border: 1px solid #333333;
-}
-
   /* Grid Section 8 News Styles */
 .grid__section-3 {
   display: flex;
   justify-content: center;
-  background-image: url('/images/5261-READ_header_2000x800_options_orange2.png');
-  background-repeat: no-repeat;
-  background-size: fill;
+  background-color: rgb(243, 69, 69);
 }
 
 /* Grid Section 9 Footer Styles */
@@ -179,6 +185,7 @@ body {
   background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
   color: white;
   text-align: left;
+  /* height: 100px; */
 }
 
 
@@ -191,12 +198,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 20%;
 }
 
 .icon {
-  height: 50px;
+  height: 35px;
+  margin-bottom: 5px;
 }
 
 .icons-container {
@@ -206,7 +214,9 @@ body {
 }
 
 .name {
+  margin-top: 5px;
   margin-bottom: 5px;
   font-family: fantasy;
-  font-size: 20px;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px black;
 }

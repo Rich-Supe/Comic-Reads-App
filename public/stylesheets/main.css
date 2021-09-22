@@ -1,5 +1,6 @@
 body {
-    background-image: url('https://www.publicdomainpictures.net/pictures/60000/velka/background-1382605766Ivf.jpg');
+    background-image: url('/images/354755-beautiful-comic-book-background-1920x1080.jpg');
+    color: white;
 }
 
 nav {
@@ -7,7 +8,7 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     background: transparent;
     height: 50px;
 }
