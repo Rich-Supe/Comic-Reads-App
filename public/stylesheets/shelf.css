@@ -19,6 +19,7 @@ h2 {
     flex-direction: column;
     margin: 8px;
     margin-top: 0px;
+    padding: 15px;
 }
 
 img {
@@ -87,8 +88,8 @@ h1 {
     border: black;   
 }
 
-.comic-title {
-    font-size: larger;
+.title {
+    font-size: 1.2em;
 }
 
 h3 {

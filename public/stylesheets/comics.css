@@ -9,18 +9,20 @@
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     padding: 15px;
 }
 
 img {
-    width: 316px;
-    height: 475px;
+    width: 221px;
+    height: 333px;
 }
 
 p {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     text-align: center;
     font-weight:900;
+    font-size: 1.2em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     height: 38px;
 }
