@@ -1,19 +1,22 @@
 .register-frame {
     border: 0.16em solid black;
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 30%;
     position: relative;
     left: 33.3333333%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .form-group {
     margin-top: 15%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .demo_btn,

@@ -3,6 +3,12 @@ extends layout
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
+  meta(property="og:title" content="Comic Reads")
+  meta(property="og:description" content="Find Your next Comic Book! Add them to your shelves, read, write, and edit your reviews!")
+  meta(property="og:image" content="https://gamebnb.s3.us-east-2.amazonaws.com/d1ecaaa415ed4a6aa3af366821fde0eb.png")
+
+
+
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 block content
