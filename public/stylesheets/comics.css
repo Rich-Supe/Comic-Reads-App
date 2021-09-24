@@ -25,6 +25,7 @@ p {
     font-size: 1.2em;
     font-family: Georgia, 'Times New Roman', Times, serif;
     height: 38px;
+    text-shadow: 2px 2px 2px black;
 }
 
 .cellButtons {
@@ -60,6 +61,10 @@ p {
 
 .title {
     width: 316px;
+}
+
+.title p {
+    text-shadow: 2px 2px 2px black;
 }
 
 .dropdown-content a {

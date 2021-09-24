@@ -11,11 +11,21 @@ nav {
     /* background-color: skyblue; */
     background: transparent;
     height: 50px;
+    text-shadow: 3px 3px 2px black;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 a, .navbar-text {
     font-size: 20px;
     font-family: fantasy;
+    text-decoration: none;
+    border: none;
+}
+
+a, .navbar-text:hover {
+    border-bottom: 2px solid white;
+    /* font-size: 21px; */
 }
 
 .logout {

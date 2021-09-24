@@ -6,12 +6,16 @@ section {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    overflow-y: hidden;
+    /* border: 50px solid grey; */
 }
 
 h1,
 h2 {
-    font-weight:bold;
+    font-weight: 600;
     text-align: center;
+    font-size: 3em;
+    text-shadow: 2px 2px black;
 }
 
 .comicCells {
@@ -59,11 +63,20 @@ button:hover {
 }
 
 #Super-Hero, #Horror, #My-Personal-Shelf {
-    width: 98%;
+    width: 80%;
     height: 500px;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     overflow-x: auto;
+    overflow-y: hidden;
+    /* border: 1px solid rgb(0, 0, 0); */
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 2px black;
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
+    margin-left: 130px;
+
 }
 
 .infoText {
@@ -75,6 +88,7 @@ button:hover {
     margin-top: 20px;
     font-size: 26px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 2px 2px black;
 }
 
 h2:not(.h2_text) {
@@ -90,6 +104,14 @@ h1 {
 
 .title {
     font-size: 1.2em;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.shelf-title {
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    text-shadow: 2px 1px 3px black;
 }
 
 h3 {

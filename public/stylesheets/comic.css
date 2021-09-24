@@ -29,6 +29,8 @@ img {
     font-size: 18px;
     color: white;
     box-shadow: 2px 2px 10px black;
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
 }
 
 .comment::placeholder {
@@ -43,6 +45,8 @@ img {
     border: 1px solid rgb(0, 0, 0);
     background-color: rgba(173, 10, 10, 0.24);
     box-shadow: 2px 2px 10px black;
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
     width: 30%;
 }
 
@@ -75,7 +79,9 @@ img {
     flex-direction: column;
     align-items: center;
     border: 1px solid rgb(0, 0, 0);
-    background-color: rgba(204, 174, 7, 0.363);
+    /* background-color: rgba(204, 174, 7, 0.363); */
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
     box-shadow: 2px 2px 10px black;
     margin-bottom: 3%;
     overflow-wrap: anywhere;
@@ -92,6 +98,8 @@ img {
     font-size: 25px;
     font-family: fantasy;
     text-align: center;
+    text-shadow: 2px 2px black;
+    margin-bottom: 16px;
 }
 
 .comic-genre {
@@ -111,7 +119,9 @@ img {
     flex-direction: column;
     align-items: center;
     border: 1px solid rgb(0, 0, 0);
-    background-color: rgba(173, 10, 10, 0.24);
+    /* background-color: rgba(173, 10, 10, 0.24); */
+    background-color: rgba(247, 247, 247, 0.11);
+    backdrop-filter: blur(30px);
     box-shadow: 2px 2px 10px black;
     width: 60%;
     padding-top: 3%;
@@ -126,6 +136,7 @@ p {
     display: flex;
     justify-content: center;
     padding: 5px;
+    
 }
 
 .dropdown {

@@ -6,6 +6,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     height: 100%;
+    text-shadow: 2px 2px 2px black;
   }
 
 .demo_btn {
@@ -130,7 +131,7 @@ body {
   font-size: 70px;
   font-weight: 300;
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 3px 3px black;
   font-family: fantasy; 
 }
 
