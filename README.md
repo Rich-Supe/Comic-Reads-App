@@ -1,6 +1,6 @@
 # Welcome to Comic-Reads!
 
-### Live site: https://comic-reads.herokuapp.com/
+### Live site: https://comicreads.herokuapp.com/
 
 Comic-Reads is a comic book application for browsing and storing comics that you like! Use our app to create shelves of comics, read/write reviews and much more!
 
