@@ -1,12 +1,7 @@
-html {
-  height: 100%;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    height: 100%;
-    text-shadow: 2px 2px 2px black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-shadow: 2px 2px 2px black;
   }
 
 .demo_btn {
@@ -74,13 +69,19 @@ body {
   margin:0.3em 0.3em 0.3em 1em;
   font-size: 14px;
   font-family: fantasy;
-  
 }
 
 .search_btn:hover {
   background-color: rgb(223, 96, 11);
   color: black;
   cursor: pointer;
+}
+
+#first-dropDown
+#second-dropDown
+#third-dropDown {
+  display: flex;
+  justify-items: center;
 }
 
 #searchTitle{
@@ -90,16 +91,13 @@ body {
 
 /* Main Grid Styles */
 .grid__container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .author-search,
-.splash-image-div,
 .genre-search {
-  /* border: 1px solid #333333; */
-  width: 33.3333333333%;
   display: flex;  
   justify-content: center;
   align-items: center;
@@ -155,6 +153,7 @@ body {
   min-height: 7%;
   display: flex;
   justify-content:center;
+  align-items: center;
   background-image: url('/images/354755-beautiful-comic-book-background-1920x1080.jpg');
   background-position-x: center;
   background-position-y:45%;
@@ -169,6 +168,7 @@ body {
 
 .flex-container-1 {
   display: flex;
+  justify-content: space-evenly;
 }
 
   /* Grid Section 8 News Styles */
@@ -186,7 +186,9 @@ body {
   background-image: url("/images/5261-READ_header_2000x800_options_orange2.png");
   color: white;
   text-align: left;
-  /* height: 100px; */
+  height: 100px;
+  position: fixed;
+  bottom: 0;
 }
 
 
@@ -220,4 +222,10 @@ body {
   font-family: fantasy;
   font-size: 25px;
   text-shadow: 1px 1px 1px black;
+}
+
+#title,
+#author,
+#genre {
+  width: 22.5vw;
 }
