@@ -47,7 +47,6 @@ router.get('/search/:searchCriteria/:selectedChoice', async (req, res, next) => 
             results3.forEach(result => results.push(result));
             break;
     }
-    console.log(`*************************************${results}`)
     res.render('results', {results});
   });
 
@@ -60,8 +59,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         userId:currUser,
         comicId:id    
     }});
-    console.log('--------------------', status)
-
     res.render('comic', { comic, reviews, status })
 }));
 

@@ -7,11 +7,10 @@ include utils.pug
 block content
     if(userShelves)
         div(class="user__shelves")
-        h1 Your Shelves 
-        each shelf in userShelves
-            //- h3(class="shelf-title") Shelf: #{shelf.name}
-            div(class='shelfInstance')
-                h3(class="shelf-title") #{shelf.name}
-                h2(id=shelf.name)
-                    each Comic in shelf.Comics
-                        +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id, shelf = true  )
+            h1 Your Shelves 
+            each shelf in userShelves
+                div(class='shelfInstance')
+                    h3(class="shelf-title") #{shelf.name}
+                    div(class="shelf" id=shelf.name)
+                        each Comic in shelf.Comics
+                            +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id, shelf = true  )

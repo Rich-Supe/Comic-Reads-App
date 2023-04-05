@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    script(src="/javascripts/comics.js" type="module" defer)
-    script(src="/javascripts/shelfButton.js" type="module" defer)
+    script(src="/scripts/comics.js" type="module" defer)
+    script(src="/scripts/shelfButton.js" type="module" defer)
     link(rel="stylesheet" href="/stylesheets/comic.css")
     div(id="catalogueInfo")
         div(id="comic-frame")
@@ -10,7 +10,7 @@ block content
             img(src= comic.coverUrl)
             p= `Written by: ${comic.author}`
             p(class='comic-genre')= `Genre: ${comic.genre}`
-            script(type="module" src="/javascripts/reviewForm.js" defer)
+            script(type="module" src="/scripts/reviewForm.js" defer)
             div(class='cellButtons')
                 button(type='button' class='shelf_btn' id=comic.id) Add To Shelf
                 if status

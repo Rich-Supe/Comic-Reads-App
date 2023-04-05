@@ -5,18 +5,19 @@ include utils.pug
 
 block content
   link(rel="stylesheet" href="/stylesheets/register.css")
-  script(src="/javascripts/demoButton.js" type="module" defer)
-  div(class='register-frame')
-    +validationErrorSummary(errors)
-    form(action='/user/register' method='post')
-      input(type='hidden' name='_csrf' value=csrfToken)
-      +field('First Name', 'firstName', user.firstName)
-      +field('Last Name', 'lastName', user.lastName)
-      +field('Email Address', 'emailAddress', user.emailAddress)
-      +field('Password', 'password', user.password, 'password')
-      +field('Confirm Password', 'confirmPassword', '', 'password')
-      div(class='py-4')
-        button(type='submit' class='btn btn-primary') Register
-        a(href='/' class='btn btn-warning ml-2') Cancel
-      div
-        p: a(href='/user/login') Already have an account?
+  script(src="/scripts/demoButton.js" type="module" defer)
+  div(class='register-page')
+    div(class='register-frame')
+      +validationErrorSummary(errors)
+      form(class='register-form' action='/user/register' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        +field('First Name', 'firstName', user.firstName)
+        +field('Last Name', 'lastName', user.lastName)
+        +field('Email Address', 'emailAddress', user.emailAddress)
+        +field('Password', 'password', user.password, 'password')
+        +field('Confirm Password', 'confirmPassword', '', 'password')(class='confirm-password-label')
+        div(class='py-4')
+          button(type='submit' class='btn btn-primary') Register
+          a(href='/' class='btn btn-warning ml-2') Cancel
+        div
+          p(class='login-suggest'): a(href='/user/login') Already have an account?

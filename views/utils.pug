@@ -12,7 +12,7 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text')
     input(type=fieldType id=fieldName name=fieldName value=fieldValue class='form-control')
 
 mixin comicCard( imageUrl, title, author, genre, id, shelf=false )
-  script(src="/javascripts/shelfButton.js" type="module" defer)
+  script(src="/scripts/shelfButton.js" type="module" defer)
   div(class='comicCells' id= id)
     div(class='title')
       p= title

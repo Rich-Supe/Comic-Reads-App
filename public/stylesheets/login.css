@@ -1,3 +1,12 @@
+.login-page {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -5,10 +14,15 @@
 }
 
 .form-group {
+    width: 100%;
     margin-top: 15%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
+}
+
+.login-form {
+    width: 68%;
 }
 
 .login-frame {
@@ -18,16 +32,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    position: relative;
-    left: 33.3333333%;
-    margin-top: 10%;
+    width: 33.3vw;
+    margin-bottom: 50px;
+    /* position: relative; */
+    /* left: 33.3vw; */
+    /* margin-top: 5%; */
 }
 
 .py-4 {
+    width: 100%;
     margin-top: 10%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -72,4 +88,20 @@ label {
 p {
     margin-top: 10%;
     text-align: center;
+}
+
+@media screen and (max-width: 1560px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .py-4 {
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .login-frame {
+        width: 190px;
+    }
 }

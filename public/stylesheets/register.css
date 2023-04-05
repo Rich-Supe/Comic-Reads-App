@@ -1,3 +1,12 @@
+.register-page {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .register-frame {
     border: 0.16em solid black;
     background-color: rgba(247, 247, 247, 0.11);
@@ -5,16 +14,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
-    position: relative;
-    left: 33.3333333%;
-    margin-top: 5%;
+    width: 33.33333%;
+    margin-bottom: 50px;
+}
+
+.register-form {
+    width: 68%;
 }
 
 .form-group {
+    max-width: 100%; 
     margin-top: 15%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     /* justify-content: center; */
 }
@@ -51,9 +63,10 @@
 }
 
 .py-4 {
+    width: 100%;    
     margin-top: 10%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -64,6 +77,26 @@ label {
 }
 
 p {
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
+}
+
+@media screen and (max-width: 1560px) {
+    .form-group {
+        flex-direction: column;
+        text-align: center  ;
+    }
+
+    .py-4 {
+        justify-content: space-evenly;
+    }
+
+    .register-frame {
+        width: 25%;
+        left: 38%;
+    }
+
+    .form-group > label {
+        width: 105%;
+    }
 }

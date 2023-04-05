@@ -2,6 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   text-shadow: 2px 2px 2px black;
+  height: 100%;
   }
 
 .demo_btn {
@@ -35,11 +36,15 @@ body {
   margin: 0px 7px;
 }
 
+.wrapper {
+  height: 95vh;
+}
+
 .dropdown {
   background-color: #4CAF50;
   color: white;
   padding: 8px;
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   cursor: pointer;
   margin: 5px 5px 5px 5px;
@@ -67,7 +72,7 @@ body {
   border:0.16em solid white;
   border-radius: 15px;
   margin:0.3em 0.3em 0.3em 1em;
-  font-size: 14px;
+  font-size: 16px;
   font-family: fantasy;
 }
 
@@ -77,11 +82,12 @@ body {
   cursor: pointer;
 }
 
-#first-dropDown
-#second-dropDown
-#third-dropDown {
+#first-dropdown,
+#second-dropdown,
+#third-dropdown {
   display: flex;
-  justify-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #searchTitle{
@@ -96,6 +102,7 @@ body {
   height: 100%;
 }
 
+.title-search,
 .author-search,
 .genre-search {
   display: flex;  
@@ -122,15 +129,15 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: 1%;
-  padding-bottom: 1%;
 }
 
 .grid__item-1-1 {
-  font-size: 70px;
+  font-size: 7vw;
   font-weight: 300;
   color: white;
   text-shadow: 3px 3px black;
-  font-family: fantasy; 
+  font-family: fantasy;
+  text-align: center;
 }
 
 .grid__item-1-2 {
@@ -158,12 +165,7 @@ body {
   background-position-x: center;
   background-position-y:45%;
   background-size: fill;
-}
-
-.splash-image {
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* padding-bottom: 15px; */
 }
 
 .flex-container-1 {
@@ -173,9 +175,13 @@ body {
 
   /* Grid Section 8 News Styles */
 .grid__section-3 {
+  height: 100%;
   display: flex;
   justify-content: center;
-  background-color: rgb(243, 69, 69);
+  background-image: url("/images/PageHeader_2000x800.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Grid Section 9 Footer Styles */
@@ -187,8 +193,8 @@ body {
   color: white;
   text-align: left;
   height: 100px;
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  padding-bottom: 10px;
 }
 
 
@@ -228,4 +234,54 @@ body {
 #author,
 #genre {
   width: 22.5vw;
+}
+
+
+@media screen and (orientation: landscape) {
+  .grid__section-3 {
+    background-image: url("/images/PageHeader_2000x800.jpg");
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  
+  .grid__section-2 {
+    justify-content: space-evenly;
+    min-height: unset;
+  }
+
+  .grid__section-3 {
+    background-image: url('/images/VWqZUb.webp');
+  }
+
+  #first-dropdown,
+  #second-dropdown,
+  #third-dropdown {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .name {
+    text-align: center;
+    width: 83px;
+  }
+
+  .grid__section-4 {
+    height: 128px;
+  }
+}
+
+@media screen and (max-width: 691px) {
+  .icon :not(#github-logo) {
+    width: 5vw;
+  }
+}
+
+
+@media screen and (max-height: 660px) {
+  .grid__section-3 {
+    background-image: url("/images/wolverine-banner.jpg");
+    /* background-size: 100%; */
+  }
 }

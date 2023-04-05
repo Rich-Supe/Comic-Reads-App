@@ -18,7 +18,6 @@ html
             form(class='form-inline pr-4' action='/user/logout' method='post')
               button(class='logout' type='submit') Logout
         else
-          span(class='navbar-text')
           a(class='btn btn-sm btn-dark mr-2' href='/user/login') Login
           a(class='btn btn-sm btn-dark' href='/user/register') Register
           if !locals.authenticated

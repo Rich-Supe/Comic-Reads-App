@@ -19,7 +19,14 @@ genre.addEventListener('change', () => {
 })
 
 searchButton.addEventListener("click", async (event)=> {
-    console.log(`searchCriteria:  selection: ${selection.value}`)
     await fetch (`/comics/search/keyword/${selection.value}`);
     window.location.href = `/comics/search/keyword/${selection.value}`
 })
+
+// if(navigator.userAgentData.mobile) {
+//     console.log('using mobile');
+// } else {
+//     console.log('using PC');
+// }
+console.log(`vw: ${window.innerWidth}px`);
+console.log(`vh: ${window.innerHeight}px`);

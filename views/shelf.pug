@@ -1,7 +1,7 @@
 include utils.pug
 
 mixin shelf(shelfId)
-    section(class="shelf")
+    section
         each Shelf in userShelves
             each Comic in Shelf.Comics
                 +comicCard( Comic.coverUrl, Comic.title, Comic.author, Comic.genre, Comic.id)

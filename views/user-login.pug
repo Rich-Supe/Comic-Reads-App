@@ -4,15 +4,16 @@ extends layout.pug
 include utils.pug
 
 block content
-  script(src="/javascripts/demoButton.js" type="module" defer)
+  script(src="/scripts/demoButton.js" type="module" defer)
   link(rel="stylesheet" href="/stylesheets/login.css")
-  div(class='login-frame')
-    +validationErrorSummary(errors)
-    form(action='/user/login' method='post')
-      input(type='hidden' name='_csrf' value=csrfToken)
-      +field('Email Address', 'emailAddress', emailAddress)
-      +field('Password', 'password', null, 'password')
-      div(class='py-4')
-        button(type='submit' class='btn btn-primary') Login
-        a(href='/' class='btn btn-warning ml-2') Cancel
-      p: a(href='/user/register') Don't have an account?
+  div(class='login-page')
+    div(class='login-frame')
+      +validationErrorSummary(errors)
+      form(class='login-form' action='/user/login' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        +field('Email Address', 'emailAddress', emailAddress)
+        +field('Password', 'password', null, 'password')
+        div(class='py-4')
+          button(type='submit' class='btn btn-primary') Login
+          a(href='/' class='btn btn-warning ml-2') Cancel
+        p: a(href='/user/register') Don't have an account?
